@@ -4,7 +4,6 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 
 //  <!--=============== Time stap  ===============-->
-// plylist - 3 - 0000
 
 //  <!--=============== dot env config ===============-->
 
@@ -17,7 +16,7 @@ const app = express();
 //  <!--=============== Middlewares ===============-->
 
 app.use(express.json()); //use for preventing from parsing error
-app.use(morgan("dev"));
+app.use(morgan("dev")); // how much time taken by quries and aslo show route end point
 
 //  <!--=============== Routes ===============-->
 

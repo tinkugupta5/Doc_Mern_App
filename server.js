@@ -2,6 +2,7 @@ const express = require("express");
 const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
 //  <!--=============== Time stap  ===============-->
 
@@ -9,6 +10,9 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+//  <!--=============== mongodb connection ===============-->
+
+connectDB();
 //  <!--=============== Rest object ===============-->
 
 const app = express();

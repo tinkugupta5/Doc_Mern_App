@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+//  <!--=============== User Schema ===============-->
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -9,11 +11,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "email is require"],
   },
-  email: {
+  Password: {
     type: String,
-    required: [true, "email is require"],
+    required: [true, "Password is require"],
   },
 });
 
+//  <!--=============== Login Controller  ===============-->
+// users --> collection name
+// userSchema -- >> nameof schema
 const userModel = mongoose.model("users", userSchema);
 module.exports = userModel;

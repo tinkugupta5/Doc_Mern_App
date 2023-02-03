@@ -19,6 +19,7 @@ const registerController = async (req, res) => {
     req.body.password = hashedPassword;
     const newUser = new userModel(req.body);
     await newUser.save();
+    
   } catch (error) {
     console.log(error);
     res.status(500).send({

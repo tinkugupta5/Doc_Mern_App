@@ -1,13 +1,28 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Form, Input, message } from "antd";
 import "../styles/RegisterStyles.css";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
+  const navigate = useNavigate();
   //   form handler
 
-  const onFinishHandler = (values) => {
+  const onFinishHandler = async (values) => {
     console.log(values);
+    try {
+      const res = await axios.post("/api/v1/user/login", values);
+      if (res.data.success) {
+        localStorage.setItem("token", res.data.token);
+        message.success("Login Sucessfully");
+        navigate("/");
+      } else {
+        message.error(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      message.error("something went wrong");
+    }
   };
 
   return (
@@ -38,4 +53,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

@@ -1,10 +1,12 @@
 import React from "react";
-import { Button, Form, Input, message } from "antd";
+import { Form, Input, message } from "antd";
 import axios from "axios";
 import "../styles/RegisterStyles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   //   form handler
   const onFinishHandler = async (values) => {
     try {
@@ -12,6 +14,9 @@ const Register = () => {
       console.log(res, "this is my res in my app");
       if (res.data.success) {
         message.success("Register Sucessfully");
+        navigate("/login");
+      } else {
+        message.error(res.data.message);
       }
     } catch (error) {
       console.log(error);

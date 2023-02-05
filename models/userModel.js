@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "email is require"],
   },
-  Password: {
+  password: {
     type: String,
     required: [true, "Password is require"],
   },
@@ -19,6 +19,6 @@ const userSchema = new mongoose.Schema({
 
 //  <!--=============== Login Controller  ===============-->
 // users --> collection name
-// userSchema -- >> nameof schema
+// userSchema -- >> name of schema
 const userModel = mongoose.model("users", userSchema);
 module.exports = userModel;

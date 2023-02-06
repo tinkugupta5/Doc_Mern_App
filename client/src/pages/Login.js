@@ -13,6 +13,7 @@ const Login = () => {
     try {
       const res = await axios.post("/api/v1/user/login", values);
       if (res.data.success) {
+        console.log("here token value is ", res.data.success);
         localStorage.setItem("token", res.data.token);
         message.success("Login Sucessfully");
         navigate("/");

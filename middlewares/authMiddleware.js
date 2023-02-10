@@ -1,5 +1,4 @@
 const JWT = require("jsonwebtoken");
-
 module.exports = async (req, res, next) => {
   console.log("this  gives headers auth value", req.headers);
   try {

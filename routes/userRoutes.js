@@ -2,7 +2,9 @@ const express = require("express");
 const {
   loginController,
   registerController,
+  authController,
 } = require("../controller/userCtrl");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 //  <!--=============== Router Object  ===============-->
 
@@ -13,5 +15,8 @@ router.post("/login", loginController);
 
 //  <!--=============== Register Router || POST  ===============-->
 router.post("/register", registerController);
+
+//  <!--=============== HOME Router || POST || auth  ===============-->
+router.post("/getUserData", authMiddleware, authController);
 
 module.exports = router;

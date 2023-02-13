@@ -7,7 +7,6 @@ const {
 const authMiddleware = require("../middlewares/authMiddleware");
 
 //  <!--=============== Router Object  ===============-->
-
 const router = express.Router();
 
 //  <!--=============== Login Router || POST  ===============-->
@@ -18,5 +17,4 @@ router.post("/register", registerController);
 
 //  <!--=============== HOME Router || POST || auth  ===============-->
 router.post("/getUserData", authMiddleware, authController);
-
 module.exports = router;

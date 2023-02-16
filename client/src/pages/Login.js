@@ -43,7 +43,8 @@ const Login = () => {
           </Form.Item>
           <button type="submit" className="btn btn-primary ">
             Login
-          </button>{" "}
+          </button>
+          
           <br></br>
           <Link to="/register" className="m-2 mt-5">
             Not a register user

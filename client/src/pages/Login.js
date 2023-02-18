@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-
   //  <!--=============== Form handler   ===============-->
   const onFinishHandler = async (values) => {
     console.log(values);
@@ -44,7 +43,7 @@ const Login = () => {
           <button type="submit" className="btn btn-primary ">
             Login
           </button>
-          
+
           <br></br>
           <Link to="/register" className="m-2 mt-5">
             Not a register user

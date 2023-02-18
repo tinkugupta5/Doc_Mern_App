@@ -17,4 +17,5 @@ router.post("/register", registerController);
 
 //  <!--=============== HOME Router || POST || auth  ===============-->
 router.post("/getUserData", authMiddleware, authController);
+
 module.exports = router;

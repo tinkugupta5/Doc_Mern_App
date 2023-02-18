@@ -10,7 +10,7 @@ const HomePage = () => {
         {},
         {
           headers: {
-            Authorization: "Bearer" + localStorage.getItem("token"),
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
@@ -21,7 +21,7 @@ const HomePage = () => {
 
   useEffect(() => {
     getUserData();
-  });
+  }, []);
 
   return (
     <div>

@@ -24,12 +24,6 @@ app.use(morgan("dev")); // how much time taken by quries and aslo show route end
 
 //  <!--=============== Routes ===============-->
 
-// app.get("/", (req, res) => {
-//   res.status(200).send({
-//     message: "server runnning",
-//   });
-// });
-
 app.use("/api/v1/user", require("./routes/userRoutes"));
 
 //  <!--=============== Port ===============-->

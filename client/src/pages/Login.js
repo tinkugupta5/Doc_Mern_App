@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  //  <!--=============== Form handler   ===============-->
+  //  <!=============== Form handler   ===============>
   const onFinishHandler = async (values) => {
     console.log(values);
     try {

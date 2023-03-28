@@ -2,13 +2,12 @@ const express = require("express");
 const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-const connectDB = require("./config/db");
+const connectDB =
+  //  <!--=============== Time stap  ===============-->
 
-//  <!--=============== Time stap  ===============-->
+  //  <!--=============== dot env config ===============-->
 
-//  <!--=============== dot env config ===============-->
-
-dotenv.config();
+  dotenv.config();
 
 //  <!--=============== mongodb connection ===============-->
 
@@ -34,7 +33,7 @@ const port = process.env.PORT || 8080; //process.env.PORT-ENVIRONMENTAL VARIABLE
 
 app.listen(port, () => {
   console.log(
-    `Server Running in ${process.env.NODE_MODE} Mode on port ${process.env.PORT} `
+    `Server Running in ${process.env.NODE_MODE} Mode on  port of ${process.env.PORT} `
       .bgCyan.white
   );
 });

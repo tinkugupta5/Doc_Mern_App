@@ -25,6 +25,8 @@ app.use(morgan("dev")); // how much time taken by quries and aslo show route end
 
 app.use("/api/v1/user", require("./routes/userRoutes"));
 
+//  <!---=========== port v2 ==========>
+
 //  <!--=============== Port ===============-->
 
 const port = process.env.PORT || 8080; //process.env.PORT-ENVIRONMENTAL VARIABLE

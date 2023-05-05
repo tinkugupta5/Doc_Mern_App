@@ -2,12 +2,12 @@ const express = require("express");
 const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-const connectDB =
-  //  <!--=============== Time stap  ===============-->
+const connectDB = require("./config/db");
+//  <!--=============== Time stap  ===============-->
 
-  //  <!--=============== dot env config ===============-->
+//  <!--=============== dot env config ===============-->
 
-  dotenv.config();
+dotenv.config();
 
 //  <!--=============== mongodb connection ===============-->
 
@@ -24,8 +24,6 @@ app.use(morgan("dev")); // how much time taken by quries and aslo show route end
 //  <!--=============== Routes ===============-->
 
 app.use("/api/v1/user", require("./routes/userRoutes"));
-
-//  <!---=========== port v2 ==========>
 
 //  <!--=============== Port ===============-->
 

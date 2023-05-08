@@ -46,7 +46,7 @@ const Login = () => {
 
           <br></br>
           <Link to="/register" className="m-2 mt-5">
-            Not a register user
+            Not a Register user
           </Link>
         </Form>
       </div>

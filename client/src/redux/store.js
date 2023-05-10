@@ -4,7 +4,7 @@ import { alertSlice } from './features/alertSlice'
 export default configureStore({
 
     reducer:{
-        alert : alertSlice.reducer
+        alerts : alertSlice.reducer,
     }
 
 })

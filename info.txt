@@ -13,3 +13,151 @@
 =======
 3:00 - 999
 >>>>>>> 2f6f6e963402a2aebf3e114b03c04086bc9640a4
+
+//dashboards
+
+import React from "react";
+
+function Dashboard() {
+  const handleMenuItemHover = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="dashboard">
+      <nav className="dashboard-menu">
+        <ul>
+          <li>
+            <a href="#" onMouseOver={() => handleMenuItemHover("home")}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" onMouseOver={() => handleMenuItemHover("bookmarks")}>
+              Bookmarks
+            </a>
+          </li>
+          <li>
+            <a href="#" onMouseOver={() => handleMenuItemHover("settings1")}>
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div className="dashboard-content">
+        <div id="home">
+          <h2>Welcome to your dashboard!</h2>
+          <p>This is the home section.</p>
+        </div>
+        <div id="bookmarks">
+          <h2>Your Bookmarks</h2>
+          <ul>
+            <li>Bookmark 1</li>
+            <li>Bookmark 2</li>
+            <li>Bookmark 3</li>
+          </ul>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+        <div id="settings1">
+          <h2>Your Settings</h2>
+          <p>Here you can customize your dashboard settings.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;
+
+
+
+//active dashboard
+
+import React, { useState } from 'react';
+
+function Dashboard() {
+  const [activeSection, setActiveSection] = useState('home');
+
+  const handleMenuClick = (section) => {
+    setActiveSection(section);
+  };
+
+  return (
+    <div className="dashboard">
+      <nav className="dashboard-menu">
+        <ul>
+          <li onClick={() => handleMenuClick('home')} className={activeSection === 'home' ? 'active' : ''}>Home</li>
+          <li onClick={() => handleMenuClick('bookmarks')} className={activeSection === 'bookmarks' ? 'active' : ''}>Bookmarks</li>
+          <li onClick={() => handleMenuClick('settings')} className={activeSection === 'settings' ? 'active' : ''}>Settings</li>
+        </ul>
+      </nav>
+      <div className="dashboard-content">
+        {activeSection === 'home' && (
+          <div className="home-section">
+            <h2>Welcome to your dashboard!</h2>
+            <p>This is the home section.</p>
+          </div>
+        )}
+        {activeSection === 'bookmarks' && (
+          <div className="bookmarks-section">
+            <h2>Your Bookmarks</h2>
+            <ul>
+              <li>Bookmark 1</li>
+              <li>Bookmark 2</li>
+              <li>Bookmark 3</li>
+            </ul>
+          </div>
+        )}
+        {activeSection === 'settings' && (
+          <div className="settings-section">
+            <h2>Your Settings</h2>
+            <p>Here you can customize your dashboard settings.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;
+

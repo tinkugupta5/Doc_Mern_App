@@ -1,23 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const alertSlice = createSlice({
-  // object name
   name: "alerts",
-
   initialState: {
-    loading: true,
+    loading: false,
   },
-
   reducers: {
-    showLoading: (state, action) => {
-      state.loading = true
+    showLoading: (state) => {
+      state.loading = true;
     },
-
-    hideLoading: (state, action) => {
-      state.loading = false
+    hideLoading: (state) => {
+      state.loading = false;
     },
   },
-
 });
 
-export const  { showLoading,hideLoading } = alertSlice.actions
+export const { showLoading, hideLoading } = alertSlice.actions;

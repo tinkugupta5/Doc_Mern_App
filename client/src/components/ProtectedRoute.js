@@ -26,6 +26,7 @@ export default function ProtectedRoute({ children }) {
       dispatch(hideLoading())
       //  <!--=============== check if we are getting user or not  ===============-->
       dispatch(setUser);
+      
     } catch (error) {
       dispatch(hideLoading())
       console.log(error)

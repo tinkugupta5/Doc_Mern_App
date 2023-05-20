@@ -6,6 +6,7 @@ import { hideLoading, showLoading } from "../redux/features/alertSlice";
 import { setUser } from "../redux/features/userSlice";
 
 export default function ProtectedRoute({ children }) {
+
   const dispatch = useDispatch();
   // for getting user 
 
@@ -25,7 +26,7 @@ export default function ProtectedRoute({ children }) {
       //  <!--=============== Post data end  ===============-->
       dispatch(hideLoading())
       if(res.data.success){
-        dispatch(setUser(res.data.))
+        dispatch(setUser(res.data.data))
       }else {
         <Navigate to="/login"/>
       }
@@ -42,7 +43,7 @@ export default function ProtectedRoute({ children }) {
     if(!user){
       getUser()
     }
-  },[user])
+  },[user]) 
 
   if (localStorage.getItem("token")) {
     return children;

@@ -15,6 +15,21 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is require"],
   },
+  isAdmin:{
+    type:Boolean,
+    default:false
+  },
+  isDoctor:{
+    type:Boolean,
+    default:false
+  },
+  notification:{
+    type:Boolean,
+    default:false
+  },
+  seennotification:{
+    type:Array,default:[],
+  }
 });
 
 //  <!--=============== Login Controller  ===============-->

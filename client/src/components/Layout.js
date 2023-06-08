@@ -1,13 +1,22 @@
 import React, { Children } from 'react'
 import '../styles/LayoutStyles.css'
-import { SidebarMenu } from '../Data/data'
+import { adminMenu,userMenu } from '../Data/data'
 import {Link,useLocation} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Layout = ({children}) => {
-    const { user } = useSelector(( state ) => state.user)
+    const { user } = useSelector(state  => state.user)
     // location instance
     const location = useLocation();
+
+
+    // logout function
+    const handleLogout = () => {
+        localStorage.clear()
+    }
+
+    //redering menu list
+    const SidebarMenu = user?.isAdmin ? adminMenu : userMenu;
     return (
         <>
             <div className='main'>
@@ -30,6 +39,12 @@ const Layout = ({children}) => {
                                     )
                                     
                                 })}
+
+                                {/* error 21:48 follow to this point */}
+                                <div className={`menu-item }`} onClick={handleLogout}>
+                                          <i class={menu.icon}></i>   
+                                          <Link to="/login">Logout</Link> 
+                                          </div>
                             </div>
                         </div>
                        

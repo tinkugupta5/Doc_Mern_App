@@ -36,8 +36,7 @@ const Layout = ({children}) => {
                                           <Link to={menu.name}>{menu.name}</Link> 
                                           </div>                   
                                         </>
-                                    )
-                                    
+                                    )                                   
                                 })}
 
                                 {/* error 21:48 follow to this point */}

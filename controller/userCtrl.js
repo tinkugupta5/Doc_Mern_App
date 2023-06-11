@@ -2,7 +2,6 @@ const userModel = require("../models/userModel");
 
 //  <!--=============== Using this we encrypt the password which is entered By use (Hash)   ===============-->
 const bcrypt = require("bcryptjs");
-
 //  <!--=============== Using this we encrypt the password which is entered By use (Hash)   ===============-->
 const jwt = require("jsonwebtoken");
 

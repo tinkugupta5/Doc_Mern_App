@@ -61,7 +61,6 @@ const loginController = async (req, res) => {
 };
 
 //  <!--=============== AuthController Controller  ===============-->
-
 const authController = async (req, res) => {
   try {
     const user = await userModel.findOne({ _id: req.body.userId });

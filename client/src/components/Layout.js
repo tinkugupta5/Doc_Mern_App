@@ -45,7 +45,7 @@ const Layout = ({children}) => {
 
                                 {/* error 21:48 follow to this point */}
                                 <div className={`menu-item `} onClick={handleLogout}>
-                                          <i class={menu.icon}></i>   
+                                <i className="fa-solid fa-right-from-bracket"></i>  
                                           <Link to="/login">Logout</Link> 
                                           </div>
                             </div>

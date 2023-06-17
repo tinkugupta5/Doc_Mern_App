@@ -1,18 +1,22 @@
 import React, { Children } from 'react'
 import '../styles/LayoutStyles.css'
 import { adminMenu,userMenu } from '../Data/data'
-import {Link,useLocation} from 'react-router-dom'
+import {Link,useLocation,useNavigate} from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { message } from 'antd'
 
 const Layout = ({children}) => {
     const { user } = useSelector(state  => state.user)
     // location instance
     const location = useLocation();
+    const navigate = useNavigate();
+    navigate('/login')
 
 
     // logout function
     const handleLogout = () => {
         localStorage.clear()
+        message.success('Logout Successfully')
     }
 
     //redering menu list
@@ -40,7 +44,7 @@ const Layout = ({children}) => {
                                 })}
 
                                 {/* error 21:48 follow to this point */}
-                                <div className={`menu-item }`} onClick={handleLogout}>
+                                <div className={`menu-item `} onClick={handleLogout}>
                                           <i class={menu.icon}></i>   
                                           <Link to="/login">Logout</Link> 
                                           </div>

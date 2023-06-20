@@ -15,6 +15,7 @@ const Login = () => {
     try {
       dispatch(showLoading())
       const res = await axios.post("/api/v1/user/login", values);
+      window.location.reload();
       dispatch(hideLoading())
       if (res.data.success) {
         console.log("here token value is ", res.data.success);
@@ -49,7 +50,6 @@ const Login = () => {
           <button type="submit" className="btn btn-primary ">
             Login
           </button>
-
           <br></br>
           <Link to="/register" className="m-2 mt-5">
             Not a Register user

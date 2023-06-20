@@ -34,6 +34,7 @@ const Layout = ({ children }) => {
                   <>
                     <div className={`menu-item ${isActive && "active"}`}>
                       <i className={menu.icon}></i>
+                      
                       <Link to={menu.path}>{menu.name}</Link>
                     </div>
                   </>

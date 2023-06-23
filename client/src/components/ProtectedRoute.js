@@ -15,8 +15,6 @@ export default function ProtectedRoute({ children }) {
       dispatch(showLoading())
       //  <!--=============== POST Api  ===============-->
 
-
-      
       const res = await axios.post('/api/v1/user/getUserData',
       {token : localStorage.getItem('token')},
       {
@@ -35,7 +33,6 @@ export default function ProtectedRoute({ children }) {
       }
       //  <!--=============== check if we are getting user or not  ===============-->
       // dispatch(setUser);
-      
     } catch (error) {
       dispatch(hideLoading())
       localStorage.clear();
@@ -54,4 +51,5 @@ useEffect(() => {
   } else {
     return <Navigate to="/login" />;
   }
+
 }

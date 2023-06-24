@@ -45,7 +45,6 @@ useEffect(() => {
     getUser();
   }
 }, [user, getUser]); 
-
   if (localStorage.getItem("token")) {
     return children;
   } else {

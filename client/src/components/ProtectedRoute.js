@@ -40,7 +40,6 @@ export default function ProtectedRoute({ children }) {
     }
   }
 // IF WE DON'T GET THE TOKEN
-
 useEffect(() => {
   if (!user) {
     getUser();

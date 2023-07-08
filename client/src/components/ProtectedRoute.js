@@ -23,6 +23,7 @@ export default function ProtectedRoute({ children }) {
       })
       //  <!--=============== Post data end  ===============-->
       dispatch(hideLoading())
+      
       if(res.data.success){
         console.log(res.data.data,"tinku loging data dot data")
         dispatch(setUser(res.data.data))

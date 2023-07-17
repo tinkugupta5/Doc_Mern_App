@@ -22,6 +22,7 @@ const Layout = ({ children }) => {
     <>
       <div className="main">
         <div className="layout">
+
           <div className="sidebar">
             <div className="logo">
               <h6>DOC APP</h6>
@@ -46,6 +47,9 @@ const Layout = ({ children }) => {
               </div>
             </div>
           </div>
+
+          {/* CONTAINER */}
+
           <div className="content">
             <div className="header">
               <div className="header-content">

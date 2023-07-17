@@ -27,6 +27,7 @@
     margin-bottom: 20px;
     box-shadow: 0 0 2px gray;
     background-color: #fff;
+    
 }
 
 .body
@@ -35,6 +36,7 @@
     margin-bottom: 20px;
     box-shadow: 0 0 2px gray;
     background-color: #fff;
+    padding: 2rem;
 }
 
 .logo{

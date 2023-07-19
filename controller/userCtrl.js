@@ -90,4 +90,17 @@ const authController = async (req, res) => {
   }
 };
 
-module.exports = { loginController, registerController, authController };
+// <!--=============== Applydoctore   ===============-->
+
+const applyDoctorController = async(req,res) => {
+  try {
+    
+  } catch (error) {
+
+    console.log(error)
+    
+  }
+
+}
+
+module.exports = { loginController, registerController, authController,applyDoctorController };

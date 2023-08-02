@@ -23,4 +23,6 @@ router.post("/getUserData", authMiddleware, authController);
 //  <!--=============== Apply doctor   ===============-->
 router.post("/apply-doctor", authMiddleware, applyDoctorController);
 
+
+
 module.exports = router;

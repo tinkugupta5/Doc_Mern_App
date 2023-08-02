@@ -1,9 +1,15 @@
 const userModel = require("../models/userModel");
+// docr model
+ 
+const doctorModel = require('../models/doctorModel');
+
 
 //  <!--=============== Using this we encrypt the password which is entered By use (Hash)   ===============-->
 const bcrypt = require("bcryptjs");
 //  <!--=============== Using this we encrypt the password which is entered By use (Hash)   ===============-->
 const jwt = require("jsonwebtoken");
+
+
 
 //  <!--=============== Register Controller  ===============-->
 const registerController = async (req, res) => {
@@ -90,10 +96,25 @@ const authController = async (req, res) => {
   }
 };
 
-// <!--=============== Applydoctore   ===============-->
+// <!--=============== Applydoctore  CTRL   ===============-->
 
 const applyDoctorController = async(req,res) => {
   try {
+
+    // WE ARE TRYING TO GET DOCTOR DETAILS
+
+    const newDoctor = await doctorModel({...req.body,status:'pending'})
+    await newDoctor.save()
+
+    // we have to notify admin too we get the notification for new user 
+    const adminUser = await userModel.findOne({isAdmin:true})
+    const notification = adminUser.notification
+    notification.push({
+      type:'apply-doctor-request',
+      message:`${newDoctor.firstName} ${newDoctor.lastName} Has Applied for Doctor Account `
+
+    })
+
     
   } catch (error) {
 

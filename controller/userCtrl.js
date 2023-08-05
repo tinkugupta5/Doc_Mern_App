@@ -105,13 +105,17 @@ const applyDoctorController = async(req,res) => {
 
     const newDoctor = await doctorModel({...req.body,status:'pending'})
     await newDoctor.save()
-
     // we have to notify admin too we get the notification for new user 
     const adminUser = await userModel.findOne({isAdmin:true})
     const notification = adminUser.notification
     notification.push({
       type:'apply-doctor-request',
-      message:`${newDoctor.firstName} ${newDoctor.lastName} Has Applied for Doctor Account `
+      message:`${newDoctor.firstName} ${newDoctor.lastName} Has Applied for Doctor Account `,
+      data:{
+        doctorId: newDoctor._id,
+        name:newDoctor.firstName.firstName + "  " + newDoctor.lastName,
+        onclickPath:'/admin/doctors'
+      }
 
     })
 

@@ -1,11 +1,27 @@
 import React from 'react'
 import Layout from "../components/Layout";
-import { Input,Row,Form,Col,TimePicker } from 'antd'
+import { Input,Row,Form,Col,TimePicker, message } from 'antd'
+import { useSelector,useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { showLoading,hideLoading } from '../redux/features/alertSlice';
 
 const ApplyDoctor = () => {
 
+const {user} = useSelector( state => state.user)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const handleFinish = (values) => {
     console.log(values)
+
+    try {
+
+      dispatch(showLoading);
+      const res await axios.post('./api/v1/user/apply-doctor',{})
+      
+    } catch (error) {
+      console.log(error)
+      message.error('something went wrong')
+    }
 
   }
   return (

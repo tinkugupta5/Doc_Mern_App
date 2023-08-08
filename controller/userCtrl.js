@@ -110,12 +110,14 @@ const applyDoctorController = async(req,res) => {
       data:{
         doctorId: newDoctor._id,
         name:newDoctor.firstName.firstName + "  " + newDoctor.lastName,
-        onclickPath:'/admin/doctors'
-      }
-
+        onclickPath:'/admin/doctors',
+      },
     })
-
-    
+    await userModel.findByIdAndUpdate(adminUser._id,{notification});
+    res.status(201).send({
+      success:true,
+      message:'Doctor Account '
+    })
   } catch (error) {
 
     console.log(error)

@@ -19,7 +19,6 @@ router.post("/register", registerController);
 //  <!--=============== HOME Router || POST || authh  ===============-->
 router.post("/getUserData", authMiddleware, authController);
 
-
 //  <!--=============== Apply doctor   ===============-->
 router.post("/apply-doctor", authMiddleware, applyDoctorController);
 

@@ -4,6 +4,7 @@ const {
   registerController,
   authController,
   applyDoctorController,
+  getAllNotificationController,
 } = require("../controller/userCtrl");
 const authMiddleware = require("../middlewares/authMiddleware");
 

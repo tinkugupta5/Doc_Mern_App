@@ -136,7 +136,9 @@ const getAllNotificationController = async(req,res) => {
 try {
 
   const user = await userModel.findOne({_id:req.body.userId})
-  // const seennotification = 
+  const seennotification = user.seennotification
+  const notification = user.notification
+  seennotification.push(...notification)
   
 } catch (error) {
   console.log(error)

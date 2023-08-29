@@ -128,7 +128,6 @@ const applyDoctorController = async(req,res) => {
     })
     
   }
-
 }
 
 // <!--=============== notification ctrl   ===============-->
@@ -139,6 +138,8 @@ try {
   const seennotification = user.seennotification
   const notification = user.notification
   seennotification.push(...notification)
+  user.notification = []
+  user.seennotification
   
 } catch (error) {
   console.log(error)

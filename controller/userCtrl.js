@@ -138,7 +138,13 @@ try {
   const notification = user.notification
   seennotification.push(...notification)
   user.notification = []
-  user.seennotification
+  user.seennotification = notification
+  const updatedUser = await user.save()
+  res.status(200).send({
+    success:true,
+    message:'all notification marked as read ',
+    data:updatedUser
+  })
   
 } catch (error) {
   console.log(error)
@@ -151,7 +157,5 @@ try {
 
 
 }
-
-
 
 module.exports = { loginController, registerController, authController,applyDoctorController,getAllNotificationController };

@@ -12,11 +12,9 @@ const NotificationPage = () => {
     const handleMarkAllRead = async() => {
         try {
             dispatch(showLoading)
-            
         } catch (error) {
             console.log(error)
             message.error("Something went wrong")
-            
         }
 
     }

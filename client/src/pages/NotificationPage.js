@@ -3,7 +3,8 @@ import Layout from "./../components/Layout";
 import {Tabs, message, notification} from 'antd'
 import TabPane from 'antd/es/tabs/TabPane';
 import { useSelector,useDispatch } from 'react-redux';
-import { showLoading } from '../redux/features/alertSlice';
+import { showLoading,hideLoading } from '../redux/features/alertSlice';
+import axios from 'axios'
 
 
 const NotificationPage = () => {
@@ -12,6 +13,7 @@ const NotificationPage = () => {
     const handleMarkAllRead = async() => {
         try {
             dispatch(showLoading)
+            const res = await axios.post
         } catch (error) {
             console.log(error)
             message.error("Something went wrong")

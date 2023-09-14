@@ -4,23 +4,42 @@ import {Tabs, message, notification} from 'antd'
 import TabPane from 'antd/es/tabs/TabPane';
 import { useSelector,useDispatch } from 'react-redux';
 import { showLoading,hideLoading } from '../redux/features/alertSlice';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 
 const NotificationPage = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {user} = useSelector(state => state.user)
     const handleMarkAllRead = async() => {
         try {
             dispatch(showLoading)
-            const res = await axios.post
+            const res = await axios.post('/api/v1/user/get-all-notification',{userId:user._id},{
+                headers:{
+                    Authorization:`Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            dispatch(hideLoading)
+            if(res.data.success)
+            {
+                message.success(res.data.message)
+            }
+            else{
+                message.error(res.data.message)
+            }
+            
         } catch (error) {
+
+            dispatch(hideLoading());
             console.log(error)
-            message.error("Something went wrong")
+            message.error("something went wrong")
+            
         }
 
     }
-    const handleDeleteAllRead = () => {
+    const handleDeleteAllRead = async() => {
+       
 
     }
   return (
@@ -33,8 +52,8 @@ const NotificationPage = () => {
             </div>
             {
                 user?.notification.map(notificationMsg => (
-                    <div className='card' onClick={notificationMsg.onClickPath}>
-                        <div className='card-text'>
+                    <div className='card'  style={{cursor:'pointer'}}>
+                        <div className='card-text' onClick={() =>navigate(notificationMsg.onClickPath)}>
                             {notificationMsg.message}
                         </div>
                     </div>

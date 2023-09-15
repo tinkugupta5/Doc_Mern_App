@@ -22,6 +22,8 @@ router.post("/getUserData", authMiddleware, authController);
 
 //  <!--=============== Apply doctor   ===============-->
 router.post("/apply-doctor", authMiddleware, applyDoctorController);
+
+
 router.post("/get-all-notification", authMiddleware, getAllNotificationController);
 
 

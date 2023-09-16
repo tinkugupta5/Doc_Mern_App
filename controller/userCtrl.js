@@ -33,7 +33,7 @@ const registerController = async (req, res) => {
   }
 };
 
-//  <!--=============== Login Controller  ===============-->
+//  <!--=============== Login Controller===============-->
 const loginController = async (req, res) => {
   try {
     const user = await userModel.findOne({ email: req.body.email });

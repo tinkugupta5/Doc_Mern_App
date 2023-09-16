@@ -25,7 +25,7 @@ export default function ProtectedRoute({ children }) {
       dispatch(hideLoading())
       
       if(res.data.success){
-        console.log(res.data.data,"tinku loging data dot data")
+        console.log(res.data.data,"loging data dot data")
         dispatch(setUser(res.data.data))
       }else {
         <Navigate to="/login"/>

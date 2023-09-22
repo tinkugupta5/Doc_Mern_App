@@ -91,7 +91,6 @@ const authController = async (req, res) => {
     });
   }
 };
-
 // <!--=============== Applydoctore  CTRL   ===============-->
 
 const applyDoctorController = async(req,res) => {

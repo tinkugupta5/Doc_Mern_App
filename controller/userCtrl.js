@@ -32,7 +32,6 @@ const registerController = async (req, res) => {
     });
   }
 };
-
 //  <!--=============== Login Controller===============-->
 const loginController = async (req, res) => {
   try {

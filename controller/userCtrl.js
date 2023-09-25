@@ -129,7 +129,6 @@ const applyDoctorController = async(req,res) => {
 // <!--=============== notification ctrl   ===============-->
 const getAllNotificationController = async(req,res) => {
 try {
-
   const user = await userModel.findOne({_id:req.body.userId})
   const seennotification = user.seennotification
   const notification = user.notification

@@ -64,13 +64,16 @@ const NotificationPage = () => {
             <div className='d-flex justify-content-end'>
                 <h4 className='p-2' onClick={handleDeleteAllRead}>Delete All Read</h4>
             </div>
-            user?.notification.map(notificationMsg => (
+            {
+            user?.seennotification.map(notificationMsg => (
                     <div className='card'  style={{cursor:'pointer'}}>
                         <div className='card-text' onClick={() =>navigate(notificationMsg.onClickPath)}>
                             {notificationMsg.message}
                         </div>
                     </div>
                 ))
+
+            }
 
 
         </Tabs.TabPane>

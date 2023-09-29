@@ -62,7 +62,7 @@ const NotificationPage = () => {
         </Tabs.TabPane>
         <Tabs.TabPane tab="Read" key={1}>
             <div className='d-flex justify-content-end'>
-                <h4 className='p-2' onClick={handleDeleteAllRead}>Delete All Read</h4>
+                <h4 className='p-2' onClick={handleDeleteAllRead}>Delete All Read Notification</h4>
             </div>
             {
             user?.seennotification.map(notificationMsg => (

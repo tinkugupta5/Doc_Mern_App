@@ -7,8 +7,7 @@ import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import axios from "axios";
 
 const ApplyDoctor = () => {
-  const { user } = useSelector((state) => state.user);
-
+  const { user } = useSelector((state) => state.user)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //handle form
@@ -34,7 +33,7 @@ const ApplyDoctor = () => {
     } catch (error) {
       dispatch(hideLoading());
       console.log(error);
-      message.error(" Somthing Went Wrrong ");
+      message.error("Somthing Went Wrrong ");
     }
   };
   return (

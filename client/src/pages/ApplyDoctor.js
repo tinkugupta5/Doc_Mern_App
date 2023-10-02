@@ -19,7 +19,7 @@ const ApplyDoctor = () => {
         { ...values, userId: user._id },
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer test 1 ${localStorage.getItem("token")}`,
           },
         }
       );

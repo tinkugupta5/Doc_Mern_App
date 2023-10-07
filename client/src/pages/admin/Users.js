@@ -4,7 +4,7 @@ import Layout from './../../components/Layout'
 
 const Users = () => {
   return (
-    <Layout>Users</Layout>
+    <Layout>Userss</Layout>
   )
 }
 

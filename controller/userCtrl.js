@@ -155,7 +155,6 @@ try {
 }
 
 // <!--=============== Delete notification ctrl   ===============-->
-
 const deleteAllNotificationController = async(req,res) => {
   try {
 
@@ -169,6 +168,9 @@ const deleteAllNotificationController = async(req,res) => {
       message:'Notification Deleted Successfully',
       data:updatedUser
     })
+
+     
+
 
     
   } catch (error) {

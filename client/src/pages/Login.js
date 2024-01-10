@@ -19,6 +19,7 @@ const Login = () => {
       dispatch(hideLoading())
       if (res.data.success) {
         console.log("here token value is ", res.data.success);
+        
         localStorage.setItem("token", res.data.token);
         message.success("Login Sucessfully");
         navigate("/");

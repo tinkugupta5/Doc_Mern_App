@@ -37,4 +37,23 @@ const getAllDoctorsController = async (req, res) => {
   }
 };
 
-module.exports = { getAllDoctorsController, getAllUsersController };
+const changeAccountStatusController = async(req,res) => {
+
+  try {
+
+    
+    
+  } catch (error) {
+
+    console.log(error)
+    res.status(500).send({
+      success:false,
+      message:'Error in Account Status',
+      error
+    })
+    
+  }
+
+}
+
+module.exports = { getAllDoctorsController, getAllUsersController,changeAccountStatusController };

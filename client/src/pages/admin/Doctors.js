@@ -6,6 +6,7 @@ import { Table } from "antd";
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   //getUsers
+  
   const getDoctors = async () => {
     try {
       const res = await axios.get("/api/v1/admin/getAllDoctors", {

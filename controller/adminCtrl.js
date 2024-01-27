@@ -42,9 +42,7 @@ const getAllDoctorsController = async (req, res) => {
 const changeAccountStatusController = async(req,res) => {
 
   try {
-
     const {doctorId,status} = req.body
-
   } catch (error) {
     console.log(error)
     res.status(500).send({

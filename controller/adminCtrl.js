@@ -24,7 +24,7 @@ const getAllDoctorsController = async (req, res) => {
     const doctors = await doctorModel.find({});
     res.status(200).send({
       success: true,
-      message: "Doctors Data list",
+      message: "Doctors Data  list",
       data: doctors,
     });
   } catch (error) {

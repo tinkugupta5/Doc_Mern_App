@@ -39,7 +39,6 @@ const getAllDoctorsController = async (req, res) => {
 
 // doctor account status
 const changeAccountStatusController = async(req,res) => {
-
   try {
     const {doctorId,status} = req.body
   } catch (error) {

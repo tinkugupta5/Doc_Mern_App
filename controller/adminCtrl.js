@@ -48,9 +48,7 @@ const changeAccountStatusController = async(req,res) => {
       message:'Error in Account Status',
       error
     })
-    
   }
-
 }
 
 module.exports = { getAllDoctorsController, getAllUsersController,changeAccountStatusController };

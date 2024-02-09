@@ -19,6 +19,7 @@ const getAllUsersController = async (req, res) => {
   }
 };
 
+
 const getAllDoctorsController = async (req, res) => {
   try {
     const doctors = await doctorModel.find({});

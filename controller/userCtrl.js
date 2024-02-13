@@ -67,7 +67,7 @@ const authController = async (req, res) => {
     user.password = undefined;
     if (!user) {
       return res.status(200).send({
-        message: "user not founds",
+        message: "user not found",
         success: false,
       });
     } else {

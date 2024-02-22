@@ -13,7 +13,6 @@ const Login = () => {
   const onFinishHandler = async (values) => {
     console.log(values);
     try {
-      
       dispatch(showLoading())
       const res = await axios.post("/api/v1/user/login", values);
       window.location.reload();

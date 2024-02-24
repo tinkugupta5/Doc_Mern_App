@@ -53,7 +53,7 @@ const Login = () => {
           </button>
           <br></br>
           <Link to="/register" className="m-2 mt-5">
-            Not a Registered User
+            Not a Register User
           </Link>
         </Form>
       </div>

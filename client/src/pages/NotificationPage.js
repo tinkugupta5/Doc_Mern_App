@@ -66,8 +66,6 @@ const NotificationPage = () => {
             message.error('Something Went Wrong In Notification');
             
         }
-       
-
     }
   return (
     <Layout>

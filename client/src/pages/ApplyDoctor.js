@@ -146,5 +146,4 @@ const ApplyDoctor = () => {
     </Layout>
   );
 };
-
 export default ApplyDoctor;

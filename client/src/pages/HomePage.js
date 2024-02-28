@@ -16,7 +16,7 @@ const HomePage = () => {
         }
       );
     } catch (error) {
-      console.log(error);
+      console.log('Line number ',error);
     }
   };
 

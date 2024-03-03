@@ -22,6 +22,7 @@ const HomePage = () => {
 
   useEffect(() => {
     getUserData();
+    
   }, []);
 
   return (

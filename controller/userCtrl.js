@@ -168,11 +168,6 @@ const deleteAllNotificationController = async(req,res) => {
       message:'Notification Deleted Successfully',
       data:updatedUser
     })
-
-     
-
-
-    
   } catch (error) {
     console.log(error);
     res.status(500).send({

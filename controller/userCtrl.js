@@ -157,7 +157,6 @@ try {
 // <!--=============== Delete notification ctrl   ===============-->
 const deleteAllNotificationController = async(req,res) => {
   try {
-
     const user = await userModel.findOne({_id:req.body.userId})
     user.notification = []
     user.seennotification = []

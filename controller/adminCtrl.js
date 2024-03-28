@@ -50,5 +50,4 @@ const changeAccountStatusController = async(req,res) => {
   }
 }
 
-
 module.exports = { getAllDoctorsController, getAllUsersController,changeAccountStatusController };

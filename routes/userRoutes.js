@@ -14,7 +14,6 @@ const router = express.Router();
 
 //  <!--=============== Login Router || POST  ===============-->
 router.post("/login", loginController);
-
 //  <!--=============== Register Router || POST  ===============-->
 router.post("/register", registerController);
 

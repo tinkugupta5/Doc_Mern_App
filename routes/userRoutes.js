@@ -28,6 +28,4 @@ router.post("/get-all-notification", authMiddleware, getAllNotificationControlle
 //  <!--=============== Deleteall-notification   ===============-->
 router.post("/delete-all-notification", authMiddleware, deleteAllNotificationController);
 
-
-
 module.exports = router;

@@ -93,9 +93,7 @@ const authController = async (req, res) => {
 
 const applyDoctorController = async(req,res) => {
   try {
-
     // WE ARE TRYING TO GET DOCTOR DETAILS
-
     const newDoctor = await doctorModel({...req.body,status:'pending'})
     await newDoctor.save()
     // we have to notify admin too we get the notification for new user 
@@ -116,7 +114,6 @@ const applyDoctorController = async(req,res) => {
       message:'Doctor Account '
     })
   } catch (error) {
-
     console.log(error)
     res.status(500).send({
       success:false,
@@ -153,8 +150,6 @@ try {
 
 
 }
-
-
 
 // <!--=============== Delete notification ctrl   ===============-->
 const deleteAllNotificationController = async(req,res) => {

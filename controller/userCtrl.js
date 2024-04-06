@@ -1,7 +1,6 @@
 const userModel = require("../models/userModel");
 // doc model
 const doctorModel = require('../models/doctorModel');
-
 //  <!--=============== Using this we encrypt the password which is entered By use (Hash)   ===============-->
 const bcrypt = require("bcryptjs");
 //  <!--=============== Using this we encrypt the password which is entered By use (Hash)   ===============-->

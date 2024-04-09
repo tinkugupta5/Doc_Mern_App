@@ -5,7 +5,6 @@ const doctorModel = require('../models/doctorModel');
 const bcrypt = require("bcryptjs");
 //  <!--=============== Using this we encrypt the password which is entered By use (Hash)   ===============-->
 const jwt = require("jsonwebtoken");
-
 //  <!--=============== Register Controller  ===============-->
 const registerController = async (req, res) => {
   try {

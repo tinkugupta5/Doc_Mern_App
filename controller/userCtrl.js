@@ -169,9 +169,7 @@ const deleteAllNotificationController = async(req,res) => {
       success:false,
       message:'unable to delete notification '
     })
-    
   }
-
 }
 
 module.exports = { loginController, registerController, authController,applyDoctorController,getAllNotificationController,deleteAllNotificationController };

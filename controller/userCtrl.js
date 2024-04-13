@@ -172,5 +172,4 @@ const deleteAllNotificationController = async(req,res) => {
   }
 }
 
-
 module.exports = { loginController, registerController, authController,applyDoctorController,getAllNotificationController,deleteAllNotificationController };

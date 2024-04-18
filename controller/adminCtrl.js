@@ -8,6 +8,7 @@ const getAllUsersController = async (req, res) => {
       success: true,
       message: "users data list",
       data: users,
+      
     });
   } catch (error) {
     console.log(error);

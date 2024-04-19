@@ -21,6 +21,7 @@ const Doctors = () => {
       console.log(error);
     }
   };
+  
   useEffect(() => {
     getDoctors();
   }, []);

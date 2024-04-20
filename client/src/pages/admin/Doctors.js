@@ -18,7 +18,7 @@ const Doctors = () => {
         setDoctors(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      console.log("error show",error);
     }
   };
   

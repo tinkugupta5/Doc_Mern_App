@@ -13,7 +13,7 @@ const registerController = async (req, res) => {
     if (existingUser) {
       return res
         .status(200)
-        .send({ message: "User Already Exist", success: false });
+        .send({ message: "user Already Exist", success: false });
     }
     const password = req.body.password;
     const salt = await bcrypt.genSalt(10);

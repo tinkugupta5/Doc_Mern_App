@@ -58,7 +58,6 @@ const loginController = async (req, res) => {
     res.status(500).send({ message: `Error in Login CTRL ${error.message}` });
   }
 };
-
 //  <!--=============== AuthController Controller  ===============-->
 const authController = async (req, res) => {
   try {

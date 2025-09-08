@@ -147,7 +147,6 @@ try {
 
 
 }
-
 // <!--=============== Delete notification ctrl   ===============-->
 const deleteAllNotificationController = async(req,res) => {
   try {

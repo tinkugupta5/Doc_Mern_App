@@ -2,27 +2,62 @@ import React, { useState } from 'react';
 import './App.css';
 
 const App = () => {
-  const [selectedClient, setSelectedClient] = useState('');
+  const [selectedClient, setSelectedClient] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Sample client data
+  // Enhanced client data with profile information
   const clients = [
-    { id: '1', name: 'Acme Corporation' },
-    { id: '2', name: 'Global Solutions Inc' },
-    { id: '3', name: 'Tech Innovators Ltd' },
-    { id: '4', name: 'Digital Ventures Co' },
-    { id: '5', name: 'Future Enterprises' }
+    { 
+      id: '1', 
+      firstName: 'Sarah',
+      lastName: 'Chen',
+      username: 'sarah.chen',
+      role: 'Project Manager',
+      avatar: 'SC'
+    },
+    { 
+      id: '2', 
+      firstName: 'Marcus',
+      lastName: 'Rodriguez',
+      username: 'marcus.r',
+      role: 'Design Lead',
+      avatar: 'MR'
+    },
+    { 
+      id: '3', 
+      firstName: 'Priya',
+      lastName: 'Patel',
+      username: 'priya.p',
+      role: 'Frontend Developer',
+      avatar: 'PP'
+    },
+    { 
+      id: '4', 
+      firstName: 'James',
+      lastName: 'Wilson',
+      username: 'james.w',
+      role: 'Backend Engineer',
+      avatar: 'JW'
+    },
+    { 
+      id: '5', 
+      firstName: 'Aisha',
+      lastName: 'Khan',
+      username: 'aisha.k',
+      role: 'Product Owner',
+      avatar: 'AK'
+    }
   ];
 
-  const handleClientSelect = (clientName) => {
-    setSelectedClient(clientName);
+  const handleClientSelect = (client) => {
+    setSelectedClient(client);
     setIsDropdownOpen(false);
   };
 
-  const handleKeyDown = (event, clientName) => {
+  const handleKeyDown = (event, client) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      handleClientSelect(clientName);
+      handleClientSelect(client);
     }
   };
 
@@ -72,6 +107,7 @@ const App = () => {
 
       {/* Main Content */}
       <main className="main-content">
+        <div className="background-grid"></div>
         <div className="welcome-container">
           {/* Greeting */}
           <h1 className="welcome-greeting">
@@ -83,7 +119,7 @@ const App = () => {
             Please select the account name to proceed
           </p>
 
-          {/* Client Selection Dropdown */}
+          {/* Enhanced Client Selection Dropdown */}
           <div className="dropdown-container">
             <label htmlFor="client-select" className="dropdown-label">
               Select Account
@@ -97,9 +133,23 @@ const App = () => {
                 aria-expanded={isDropdownOpen}
                 aria-labelledby="client-select-label"
               >
-                <span className="selected-value">
-                  {selectedClient || 'Choose an account...'}
-                </span>
+                {selectedClient ? (
+                  <div className="selected-client-profile">
+                    <div className="client-avatar small">
+                      {selectedClient.avatar}
+                    </div>
+                    <div className="client-info">
+                      <div className="client-name">
+                        {selectedClient.firstName} {selectedClient.lastName}
+                      </div>
+                      <div className="client-username">
+                        @{selectedClient.username}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <span className="placeholder">Choose an account...</span>
+                )}
                 <svg 
                   className={`dropdown-arrow ${isDropdownOpen ? 'rotated' : ''}`}
                   width="16" 
@@ -124,13 +174,26 @@ const App = () => {
                     <li key={client.id} role="none">
                       <button
                         role="option"
-                        aria-selected={selectedClient === client.name}
-                        className={`dropdown-item ${selectedClient === client.name ? 'selected' : ''}`}
-                        onClick={() => handleClientSelect(client.name)}
-                        onKeyDown={(e) => handleKeyDown(e, client.name)}
+                        aria-selected={selectedClient?.id === client.id}
+                        className={`dropdown-item ${selectedClient?.id === client.id ? 'selected' : ''}`}
+                        onClick={() => handleClientSelect(client)}
+                        onKeyDown={(e) => handleKeyDown(e, client)}
                         tabIndex={0}
                       >
-                        {client.name}
+                        <div className="client-profile">
+                          <div className="client-avatar">
+                            {client.avatar}
+                          </div>
+                          <div className="client-details">
+                            <div className="client-name">
+                              {client.firstName} {client.lastName}
+                            </div>
+                            <div className="client-meta">
+                              <span className="client-username">@{client.username}</span>
+                              <span className="client-role">{client.role}</span>
+                            </div>
+                          </div>
+                        </div>
                       </button>
                     </li>
                   ))}
@@ -144,7 +207,7 @@ const App = () => {
             className={`proceed-btn ${selectedClient ? 'active' : ''}`}
             onClick={handleProceed}
             disabled={!selectedClient}
-            aria-label={`Proceed with ${selectedClient || 'selected account'}`}
+            aria-label={`Proceed with ${selectedClient ? `${selectedClient.firstName} ${selectedClient.lastName}` : 'selected account'}`}
           >
             Proceed
             <svg 

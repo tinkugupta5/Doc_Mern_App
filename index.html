@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Smart Biodata · Best Marriage Biodata Maker Online</title>
+    <meta name="description" content="Create premium marriage biodata online with Smart Biodata. Choose from professional templates, download high-quality PDFs, and build your matrimony profile in minutes.">
+    <meta name="keywords" content="marriage biodata maker, online biodata creator, matrimonial profile builder, biodata for marriage, smart biodata, marriage biodata format">
+    <meta name="author" content="Smart Biodata">
+    <link rel="canonical" href="https://smartbiodata.in/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartbiodata.in/">
+    <meta property="og:title" content="Smart Biodata · Best Marriage Biodata Maker Online">
+    <meta property="og:description" content="Design stunning marriage biodata in minutes. Choose from elegant templates and download as PDF.">
+    <meta property="og:image" content="https://smartbiodata.in/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://smartbiodata.in/">
+    <meta property="twitter:title" content="Smart Biodata · Best Marriage Biodata Maker Online">
+    <meta property="twitter:description" content="Design stunning marriage biodata in minutes. Choose from elegant templates and download as PDF.">
+    <meta property="twitter:image" content="https://smartbiodata.in/og-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Smart Biodata",
+      "url": "https://smartbiodata.in/",
+      "description": "Premium online marriage biodata maker with multiple elegant templates.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
+    <!-- Tailwind + Fonts + Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { transition: all 0.2s ease; }
+        body { font-family: 'Inter', sans-serif; background: #fefaf5; }
+        .preview-serif { font-family: 'Cormorant Garamond', serif; }
+
+        /* ---------- Template Containers ---------- */
+        #preview-wrapper {
+            width: 794px;
+            min-height: 1123px;
+            position: relative;
+            margin: auto;
+            background: white;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .template-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 1123px;
+            display: none;
+            padding: 48px 56px;
+            box-sizing: border-box;
+        }
+        .template-active {
+            display: block;
+            position: relative;
+        }
+        .field-container { position: relative; transition: opacity 0.2s; }
+        .toggle-field-btn { font-size: 10px; cursor: pointer; padding: 2px 6px; border-radius: 4px; }
+
+        /* ---------- Classic Template (existing design) ---------- */
+        .mandala-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' opacity='0.08'%3E%3Cpath fill='%23D97706' d='M100 10 L110 40 L140 50 L110 60 L100 90 L90 60 L60 50 L90 40 Z'/%3E%3Ccircle cx='100' cy='100' r='15' fill='none' stroke='%23D97706' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 45px;
+        }
+        .section-title-biodata {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #9A3412;
+            border-left: 4px solid #F97316;
+            padding-left: 1rem;
+            margin: 1.5rem 0 1rem 0;
+            font-family: 'Cormorant Garamond', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .field-label-preview { font-weight: 600; color: #4b5563; min-width: 130px; display: inline-block; font-size: 1rem; font-family: 'Inter', sans-serif; }
+        .field-value-preview { font-weight: 500; color: #1f2937; font-size: 1rem; font-family: 'Inter', sans-serif; }
+
+        /* ---------- Custom Image Template ---------- */
+        .custom-img-bg { 
+            background-image: url('./background-image/biodata%20image.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .custom-img-content {
+            padding: 130px 90px 80px 90px; /* Adjust these values to fit the blank area */
+            position: relative;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .custom-img-section-title {
+            font-size: 1.3rem; font-weight: 800; color: #ad3333; /* Dark red matching image */
+            margin: 1.2rem 0 0.8rem 0; font-family: 'Inter', sans-serif;
+        }
+        .custom-img-field-label { 
+            font-weight: 500; color: #333; min-width: 150px; display: inline-block; 
+            font-family: 'Inter', sans-serif; font-size: 0.9rem; 
+        }
+        .custom-img-field-value { 
+            font-weight: 400; color: #111; font-family: 'Inter', sans-serif; font-size: 0.9rem; 
+        }
+        .custom-img-photo-container {
+            position: absolute;
+            top: 20px; 
+            right: 0px; 
+            width: 140px; 
+            height: 180px;
+            padding: 2px;
+            background: none;
+            border-radius: 6px;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .custom-img-photo-container img {
+            border-radius: 4px;
+        }
+
+        /* ---------- Template Switcher Cards ---------- */
+        .template-card {
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .template-card.active {
+            border-color: #F97316;
+            background: #fff7ed;
+            box-shadow: 0 8px 18px -8px rgba(249,115,22,0.3);
+        }
+        .template-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(0,0,0,0.12);
+        }
+
+        /* ---------- Watermark ---------- */
+        .watermark {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 20;
+            font-size: 7rem;
+            font-weight: 900;
+            color: rgba(209, 213, 219, 0.3);
+            transform: rotate(-12deg);
+            letter-spacing: 0.2em;
+        }
+
+        /* ---------- Custom scroll & extras ---------- */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #F97316; border-radius: 10px; }
+        .floating-card { transition: transform 0.2s, box-shadow 0.2s; }
+        .floating-card:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1); }
+        .btn-glow:active { transform: scale(0.97); }
+        .toggle-btn { background: #FFF7ED; border-radius: 40px; padding: 0.2rem 0.8rem; font-size: 0.75rem; font-weight: 600; }
+
+        /* ---------- Template 1 ---------- */
+        .template1-bg { 
+            background-image: url('./background-image/template1.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .template1-content {
+            padding: 220px 80px 70px 80px; /* Adjusted padding to push content properly */
+            position: relative;
+            height: 100%;
+            box-sizing: border-box;
+            /* removed default font-family so it doesn't force serif on everything */
+        }
+        .t1-section-title {
+            font-size: 1.4rem; /* Much larger */
+            font-weight: 800;
+            color: #8c5e2a; 
+            text-transform: uppercase;
+            margin: 2.2rem 0 1.2rem 0; /* Larger gaps between sections */
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.05em;
+        }
+        .t1-field-label { font-weight: 600; color: #4b5563; min-width: 190px; display: inline-block; font-size: 1rem; font-family: 'Inter', sans-serif; }
+        .t1-field-value { font-weight: 500; color: #1f2937; font-size: 1rem; font-family: 'Inter', sans-serif; }
+        .t1-photo-container {
+            position: absolute;
+            top: 0px; /* Set to 0 because relative container starts below top padding */
+            right: 0px; 
+            width: 155px; 
+            height: 195px;
+            background: none;
+            overflow: hidden;
+            z-index: 10;
+        }
+        /* ---------- Muslim Biodata Template ---------- */
+        .muslim-bg { 
+            background-image: url('./background-image/muslimbiodata.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 1123px; /* Full A4 height */
+        }
+        .muslim-content {
+            padding: 140px 60px 60px 60px;
+            position: relative;
+            min-height: 100%;
+            box-sizing: border-box;
+        }
+        .muslim-section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #2d5a27;
+            text-transform: uppercase;
+            margin: 1.8rem 0 0.8rem 0;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.04em;
+            border-bottom: 2.5px solid #2d5a27;
+            padding-bottom: 4px;
+            display: inline-block;
+        }
+        .muslim-field-label { 
+            font-weight: 600; color: #1f2937; min-width: 175px; display: inline-block; 
+            font-size: 1rem; font-family: 'Inter', sans-serif; 
+        }
+        .muslim-field-value { 
+            font-weight: 500; color: #374151; font-size: 1rem; 
+            font-family: 'Inter', sans-serif; 
+        }
+        .muslim-colon { color: #2d5a27; margin-right: 0.5rem; font-weight: 700; }
+        .muslim-photo-container {
+            position: absolute;
+            top: 80px;
+            right: 0px; 
+            width: 150px; 
+            height: 190px;
+            background: none;
+            overflow: hidden;
+            z-index: 10;
+            border-radius: 8px;
+            border: 3px solid #2d5a27;
+        }
+
+        /* ---------- Template 2 ---------- */
+        .template2-bg { 
+            background-image: url('./background-image/template2.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .template2-content {
+            padding: 270px 80px 70px 80px; 
+            position: relative;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .t2-section-title {
+            font-size: 1.25rem; 
+            font-weight: 800;
+            color: #d19f3b;
+            text-transform: uppercase;
+            margin: 1.5rem 0 1rem 0; 
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+        .t2-field-label { font-weight: 600; color: #374151; min-width: 160px; display: inline-block; font-size: 0.95rem; font-family: 'Inter', sans-serif; }
+        .t2-field-value { font-weight: 500; color: #1f2937; font-size: 0.95rem; font-family: 'Inter', sans-serif; }
+        .t2-photo-container {
+            position: absolute;
+            top: 0px; 
+            right: 0px; 
+            width: 135px; 
+            height: 175px;
+            background: none;
+            overflow: hidden;
+            z-index: 10;
+            border: 3px solid #d19f3b; 
+        }
+
+        /* ---------- Template 3 ---------- */
+        .template3-bg { 
+            background-image: url('./background-image/temapte3.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .template3-content {
+            padding: 270px 80px 70px 80px; 
+            position: relative;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .t3-section-title {
+            font-size: 1.25rem; 
+            font-weight: 800;
+            color: #b07e2a; 
+            text-transform: uppercase;
+            margin: 1.5rem 0 1rem 0; 
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+        .t3-field-label { font-weight: 600; color: #374151; min-width: 160px; display: inline-block; font-size: 0.95rem; font-family: 'Inter', sans-serif; }
+        .t3-field-value { font-weight: 500; color: #1f2937; font-size: 0.95rem; font-family: 'Inter', sans-serif; }
+        .t3-photo-container {
+            position: absolute;
+            top: 20px; 
+            right: 0px; 
+            width: 135px; 
+            height: 175px;
+            background: none;
+            overflow: hidden;
+            z-index: 10;
+            border: 3px solid #b07e2a; 
+        }
+
+        /* Inline editing styles */
+        [contenteditable="true"] {
+            outline: 2px solid #F59E0B !important;
+            background: #FFFBEB !important;
+            border-radius: 4px;
+            padding: 0 4px;
+            cursor: text;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- modern navbar -->
+    <nav class="bg-gradient-to-r from-[#4C1D95] to-[#7E22CE] text-white py-4 px-6 sticky top-0 z-50 flex flex-wrap justify-between items-center shadow-2xl">
+        <div class="flex items-center gap-2">
+            <h1 class="text-2xl font-bold tracking-tight">✨ Smart<span class="text-amber-300">Biodata</span></h1>
+            <div class="hidden md:block text-xs bg-white/20 px-3 py-1 rounded-full">❤️ Premium Matrimony Tool</div>
+        </div>
+        <div class="flex gap-2">
+            <span class="text-sm hidden md:inline-flex items-center gap-1"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> 2.3L+ biodatas created</span>
+            <button onclick="fillSampleData()" class="text-sm bg-white/20 hover:bg-white/30 rounded-full px-4 py-1 transition">✨ Sample data</button>
+        </div>
+    </nav>
+
+    <div class="w-full max-w-[1500px] mx-auto py-8 px-4 xl:px-8 flex flex-col xl:flex-row gap-8">
+        <!-- LEFT FORM PANEL - enhanced UX -->
+        <div class="xl:w-[38%] space-y-5">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-100">
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 px-6 py-3 border-b border-amber-200">
+                    <h2 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="text-2xl">📝</span> Design your biodata</h2>
+                    <p class="text-xs text-stone-500">Add details → realtime preview → secure download</p>
+                </div>
+                <div class="p-6 space-y-6 max-h-[80vh] overflow-y-auto custom-scroll">
+                    <!-- Each section Card with toggle -->
+                    <div id="card-personal" class="section-card rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm" data-section="personal">
+                        <div class="flex justify-between items-center p-4 bg-gray-50/80 cursor-pointer" onclick="toggleSection('personal')">
+                            <div class="flex items-center gap-2"><span class="font-bold text-amber-700">👤</span><h3 class="font-semibold text-gray-800" id="label-personal">Personal Details</h3></div>
+                            <button class="toggle-btn text-amber-700 text-xs flex gap-1"><span id="toggle-icon-personal">−</span> Hide</button>
+                        </div>
+                        <div id="form-personal" class="p-5 grid grid-cols-1 md:grid-cols-2 gap-5 transition-all">
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="name">Full name</label>
+                                        <button onclick="editLabel('name')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('name')" data-del-btn="name" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-name" oninput="liveUpdate()" placeholder="e.g. Aditya Sharma" class="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-400 outline-none">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="dob">Date of birth</label>
+                                        <button onclick="editLabel('dob')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('dob')" data-del-btn="dob" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-dob" oninput="liveUpdate()" placeholder="15 May 1995" class="w-full p-3 border border-gray-200 rounded-xl">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="religion">Religion</label>
+                                        <button onclick="editLabel('religion')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('religion')" data-del-btn="religion" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-religion" oninput="liveUpdate()" placeholder="Hindu" class="w-full p-3 border rounded-xl">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="caste">Caste / Sub-caste</label>
+                                        <button onclick="editLabel('caste')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('caste')" data-del-btn="caste" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-caste" oninput="liveUpdate()" placeholder="Rajput" class="w-full p-3 border rounded-xl">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="edu">Education</label>
+                                        <button onclick="editLabel('edu')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('edu')" data-del-btn="edu" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-edu" oninput="liveUpdate()" placeholder="MBA, IIM Ahmedabad" class="w-full p-3 border rounded-xl">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="job">Occupation</label>
+                                        <button onclick="editLabel('job')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('job')" data-del-btn="job" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-job" oninput="liveUpdate()" placeholder="Software Engineer" class="w-full p-3 border rounded-xl">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="salary">Annual Income (₹)</label>
+                                        <button onclick="editLabel('salary')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('salary')" data-del-btn="salary" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-salary" oninput="liveUpdate()" placeholder="18 LPA" class="w-full p-3 border rounded-xl">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horoscope Card -->
+                    <div class="section-card rounded-xl border border-gray-200 bg-white overflow-hidden" data-section="horoscope">
+                        <div class="flex justify-between items-center p-4 bg-gray-50/80 cursor-pointer" onclick="toggleSection('horoscope')">
+                            <div class="flex items-center gap-2"><span class="font-bold text-amber-700">🔮</span><h3 class="font-semibold text-gray-800" id="label-horoscope">Horoscope / Astro</h3></div>
+                            <button class="toggle-btn text-amber-700"><span id="toggle-icon-horoscope">−</span> Hide</button>
+                        </div>
+                        <div id="form-horoscope" class="p-5 grid grid-cols-2 gap-4">
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="gothra">Gothra</label>
+                                        <button onclick="editLabel('gothra')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('gothra')" data-del-btn="gothra" class="text-red-400 hover:text-red-600 text-xs" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-gothra" oninput="liveUpdate()" class="w-full p-2 border rounded-lg">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="rashi">Rashi</label>
+                                        <button onclick="editLabel('rashi')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('rashi')" data-del-btn="rashi" class="text-red-400 hover:text-red-600 text-xs" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-rashi" oninput="liveUpdate()" class="w-full p-2 border rounded-lg">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="nakshatra">Nakshatra</label>
+                                        <button onclick="editLabel('nakshatra')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('nakshatra')" data-del-btn="nakshatra" class="text-red-400 hover:text-red-600 text-xs" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-nakshatra" oninput="liveUpdate()" class="w-full p-2 border rounded-lg">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="gan">Gan / Mangal</label>
+                                        <button onclick="editLabel('gan')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('gan')" data-del-btn="gan" class="text-red-400 hover:text-red-600 text-xs" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-gan" oninput="liveUpdate()" placeholder="Mangal / Gan" class="w-full p-2 border rounded-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Details -->
+                    <div class="section-card rounded-xl border border-gray-200 bg-white overflow-hidden" data-section="family">
+                        <div class="flex justify-between items-center p-4 bg-gray-50/80 cursor-pointer" onclick="toggleSection('family')">
+                            <div><span class="font-bold text-amber-700">👪</span><h3 class="font-semibold inline ml-2">Family Details</h3></div>
+                            <button class="toggle-btn"><span id="toggle-icon-family">−</span> Hide</button>
+                        </div>
+                        <div id="form-family" class="p-5 space-y-4">
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="father">Father's name & occupation</label>
+                                        <button onclick="editLabel('father')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('father')" data-del-btn="father" class="text-red-400 hover:text-red-600 text-xs" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-father" oninput="liveUpdate()" class="w-full p-3 border rounded-xl" placeholder="Sh. Rajesh Sharma (Retd. Banker)">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="mother">Mother's name & occupation</label>
+                                        <button onclick="editLabel('mother')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('mother')" data-del-btn="mother" class="text-red-400 hover:text-red-600 text-xs" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-mother" oninput="liveUpdate()" class="w-full p-3 border rounded-xl" placeholder="Smt. Meera Sharma (Homemaker)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo + Contact combined elegance -->
+                    <div class="section-card rounded-xl border border-gray-200 bg-white overflow-hidden" data-section="photo">
+                        <div class="flex justify-between items-center p-4 bg-gray-50/80 cursor-pointer" onclick="toggleSection('photo')">
+                            <div><span class="font-bold text-amber-700">🖼️</span><h3 class="font-semibold inline ml-2">Profile Photo</h3></div>
+                            <button class="toggle-btn"><span id="toggle-icon-photo">−</span> Hide</button>
+                        </div>
+                        <div id="form-photo" class="p-5"><input type="file" accept="image/*,.heic" onchange="loadPhoto(event)" class="text-sm file:mr-3 file:py-2 file:px-4 file:rounded-full file:bg-amber-50 file:text-amber-700 file:border-0"></div>
+                    </div>
+
+                    <div class="section-card rounded-xl border border-gray-200 bg-white overflow-hidden" data-section="contact">
+                        <div class="flex justify-between items-center p-4 bg-gray-50/80 cursor-pointer" onclick="toggleSection('contact')">
+                            <div><span class="font-bold text-amber-700">📞</span><h3 class="font-semibold inline ml-2">Contact Info</h3></div>
+                            <button class="toggle-btn"><span id="toggle-icon-contact">−</span> Hide</button>
+                        </div>
+                        <div id="form-contact" class="p-5 space-y-4">
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="mobile">Mobile number</label>
+                                        <button onclick="editLabel('mobile')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('mobile')" data-del-btn="mobile" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <input type="text" id="in-mobile" oninput="liveUpdate()" placeholder="Mobile number" class="w-full p-3 border rounded-xl">
+                            </div>
+                            <div class="field-container">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <label class="text-xs font-semibold text-gray-500" data-label-id="address">Full address</label>
+                                        <button onclick="editLabel('address')" class="text-gray-400 hover:text-amber-600 transition-colors" title="Edit label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <button onclick="toggleField('address')" data-del-btn="address" class="text-red-400 hover:text-red-600 text-xs transition-colors" title="Hide field">✕</button>
+                                </div>
+                                <textarea id="in-address" oninput="liveUpdate()" rows="2" placeholder="Full address" class="w-full p-3 border rounded-xl"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Fields (dynamic) -->
+                    <div class="rounded-xl border border-dashed border-amber-300 bg-amber-50/30 p-5">
+                        <div class="flex justify-between items-center mb-3"><h3 class="font-bold text-amber-800">✨ Custom fields</h3><button onclick="addCustomField()" class="bg-amber-600 text-white text-sm px-3 py-1 rounded-full hover:bg-amber-700">+ Add</button></div>
+                        <div id="custom-fields-container" class="space-y-3"></div>
+                    </div>
+
+                    <!-- Payment CTA area -->
+                    <div class="pt-4 sticky bottom-0 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-4 -mx-1">
+                        <button id="payBtn" onclick="initiatePayment()" class="w-full bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold py-4 rounded-xl shadow-xl transition-all flex items-center justify-center gap-3 text-lg"><span>💎</span> Unlock Premium PDF · ₹99 only</button>
+                        <p class="text-center text-[11px] text-gray-400 mt-2">Secure payment · Watermark free PDF · Instant download</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PREVIEW PANEL -->
+        <div class="xl:w-[62%]">
+            <div class="sticky top-28 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                <div class="bg-amber-50 px-5 py-3 flex justify-between items-center border-b">
+                    <span class="font-bold text-gray-700 flex gap-2"><span class="text-xl">🔍</span> Live Elegant Preview</span>
+                    <div class="flex items-center gap-3">
+                        <button onclick="generatePremiumPDF()" class="text-xs bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-3 py-1.5 rounded-lg shadow-sm font-semibold flex items-center gap-1 transition-all">
+                            <span>📥</span> Download PDF
+                        </button>
+                        <span class="text-[11px] bg-white px-3 py-1 rounded-full shadow-sm hidden sm:inline-block text-gray-500">A4 template</span>
+                    </div>
+                </div>
+
+                <!-- TEMPLATE SWITCHER (cards) - scrollable for many templates -->
+                <div class="px-5 py-4 bg-gray-50/80 flex gap-3 overflow-x-auto border-b border-gray-100" style="scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
+                    <div class="template-card active min-w-[145px] bg-white p-3 rounded-xl flex items-center gap-2 shadow-sm border border-amber-200 relative" onclick="switchTemplate('template1')" data-template="template1">
+                        <div class="absolute -top-1 -right-1 bg-orange-500 text-white text-[8px] px-2 py-0.5 rounded-full font-bold uppercase shadow-sm">Most Used</div>
+                        <span class="text-2xl">📝</span>
+                        <div class="text-left"><div class="font-bold text-sm text-gray-800 leading-tight">Template 1</div><div class="text-[10px] text-gray-500 leading-tight mt-0.5">Golden Border</div></div>
+                    </div>
+                    <div class="template-card min-w-[145px] bg-white p-3 rounded-xl flex items-center gap-2 shadow-sm border border-amber-200" onclick="switchTemplate('template2')" data-template="template2">
+                        <span class="text-2xl">✨</span>
+                        <div class="text-left"><div class="font-bold text-sm text-gray-800 leading-tight">Template 2</div><div class="text-[10px] text-gray-500 leading-tight mt-0.5">Premium Gold</div></div>
+                    </div>
+                    <div class="template-card min-w-[145px] bg-white p-3 rounded-xl flex items-center gap-2 shadow-sm border border-amber-200" onclick="switchTemplate('template3')" data-template="template3">
+                        <span class="text-2xl">🌟</span>
+                        <div class="text-left"><div class="font-bold text-sm text-gray-800 leading-tight">Template 3</div><div class="text-[10px] text-gray-500 leading-tight mt-0.5">Royal Gold</div></div>
+                    </div>
+                    <div class="template-card min-w-[145px] bg-white p-3 rounded-xl flex items-center gap-2 shadow-sm" onclick="switchTemplate('classic')" data-template="classic">
+                        <span class="text-2xl">📜</span>
+                        <div class="text-left"><div class="font-bold text-sm text-gray-800 leading-tight">Template 4</div><div class="text-[10px] text-gray-500 leading-tight mt-0.5">Elegant</div></div>
+                    </div>
+                    <div class="template-card min-w-[145px] bg-white p-3 rounded-xl flex items-center gap-2 shadow-sm border border-purple-100" onclick="switchTemplate('customimg')" data-template="customimg">
+                        <span class="text-2xl">🖼️</span>
+                        <div class="text-left"><div class="font-bold text-sm text-gray-800 leading-tight">Template 5</div><div class="text-[10px] text-gray-500 leading-tight mt-0.5">Custom back</div></div>
+                    </div>
+
+                    <div class="template-card min-w-[145px] bg-white p-3 rounded-xl flex items-center gap-2 shadow-sm border border-green-200" onclick="switchTemplate('muslim')" data-template="muslim">
+                        <span class="text-2xl">🕌</span>
+                        <div class="text-left"><div class="font-bold text-sm text-gray-800 leading-tight">Template 6</div><div class="text-[10px] text-gray-500 leading-tight mt-0.5">Islamic design</div></div>
+                    </div>
+                </div>
+
+                <!-- PREVIEW AREA WITH MULTI-TEMPLATE CONTAINERS -->
+                <div class="overflow-x-auto p-4 bg-[#faf7f2] flex justify-center">
+                    <div id="capture-area" class="scale-[0.95] md:scale-100 origin-top transition-all">
+                        <div id="preview-wrapper">
+                            <!-- CLASSIC TEMPLATE -->
+                            <div id="template-classic" class="template-container mandala-bg">
+                                <div class="watermark">PREVIEW</div>
+                                <div class="text-center border-b border-amber-200 pb-3 mb-4">
+                                    <p class="text-amber-700 text-sm font-serif italic">श्री गणेशाय नमः</p>
+                                    <h1 class="text-5xl font-bold text-stone-800 tracking-wide mt-1">BIODATA</h1>
+                                    <div class="w-24 h-0.5 bg-amber-400 mx-auto mt-2"></div>
+                                </div>
+                                <div class="flex flex-wrap gap-6 justify-between">
+                                    <div class="flex-1 space-y-4">
+                                        <div class="section-personal">
+                                            <div class="section-title-biodata">Personal Details</div>
+                                            <div class="grid grid-cols-1 gap-1">
+                                                <div><span class="field-label-preview">Full name :</span> <span data-field="name" class="field-value-preview">—</span></div>
+                                                <div><span class="field-label-preview">Birth date :</span> <span data-field="dob" class="field-value-preview">—</span></div>
+                                                <div><span class="field-label-preview">Religion :</span> <span data-field="religion" class="field-value-preview">—</span></div>
+                                                <div><span class="field-label-preview">Caste :</span> <span data-field="caste" class="field-value-preview">—</span></div>
+                                                <div><span class="field-label-preview">Education :</span> <span data-field="edu" class="field-value-preview">—</span></div>
+                                                <div><span class="field-label-preview">Profession :</span> <span data-field="job" class="field-value-preview">—</span></div>
+                                                <div><span class="field-label-preview">Annual income :</span> <span data-field="salary" class="field-value-preview">—</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="section-horoscope mt-4">
+                                            <div class="section-title-biodata">Horoscope</div>
+                                            <div><span class="field-label-preview">Gothra :</span> <span data-field="gothra" class="field-value-preview">—</span></div>
+                                            <div><span class="field-label-preview">Rashi :</span> <span data-field="rashi" class="field-value-preview">—</span></div>
+                                            <div><span class="field-label-preview">Nakshatra :</span> <span data-field="nakshatra" class="field-value-preview">—</span></div>
+                                            <div><span class="field-label-preview">Gan :</span> <span data-field="gan" class="field-value-preview">—</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-32 h-36 bg-gray-50 border-2 border-amber-200 rounded-lg shadow-md flex items-center justify-center overflow-hidden">
+                                        <img data-field="photo" class="hidden w-full h-full object-cover">
+                                        <span class="photo-placeholder text-gray-400 text-xs">📷 photo</span>
+                                    </div>
+                                </div>
+                                <div class="section-family mt-5">
+                                    <div class="section-title-biodata">Family Details</div>
+                                    <div><span class="field-label-preview">Father :</span> <span data-field="father" class="field-value-preview">—</span></div>
+                                    <div><span class="field-label-preview">Mother :</span> <span data-field="mother" class="field-value-preview">—</span></div>
+                                </div>
+                                <div class="section-contact mt-5">
+                                    <div class="section-title-biodata">Contact Details</div>
+                                    <div><span class="field-label-preview">Mobile :</span> <span data-field="mobile" class="field-value-preview">—</span></div>
+                                    <div><span class="field-label-preview">Address :</span> <span data-field="address" class="field-value-preview">—</span></div>
+                                </div>
+                                <div class="custom-output-section mt-5"></div>
+                                <div class="text-center text-[10px] text-gray-300 mt-8 pt-4 border-t">SmartBiodata · crafted with tradition</div>
+                            </div>
+
+                            <!-- CUSTOM IMAGE TEMPLATE -->
+                            <div id="template-customimg" class="template-container custom-img-bg p-0">
+                                <div class="watermark" style="z-index: 20;">PREVIEW</div>
+                                
+                                <div class="custom-img-content z-10">
+                                    <!-- Header space -->
+                                    <div class="h-10"></div> 
+
+                                    <div class="relative">
+                                        <!-- Photo absolute on top right inside the padded area -->
+                                        <div class="custom-img-photo-container shadow-sm border border-gray-300/50">
+                                            <img data-field="photo" class="hidden w-full h-full object-cover">
+                                            <div class="photo-placeholder w-full h-full bg-black/5 flex items-center justify-center text-gray-500 text-sm">📷 photo</div>
+                                        </div>
+
+                                        <div class="w-[70%]">
+                                            <div class="section-personal">
+                                                <div class="custom-img-section-title">Personal Details</div>
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div><span class="custom-img-field-label">Full Name</span><span class="mr-2">:</span><span data-field="name" class="custom-img-field-value">—</span></div>
+                                                    <div><span class="custom-img-field-label">Date of Birth</span><span class="mr-2">:</span><span data-field="dob" class="custom-img-field-value">—</span></div>
+                                                    <div><span class="custom-img-field-label">Religion</span><span class="mr-2">:</span><span data-field="religion" class="custom-img-field-value">—</span></div>
+                                                    <div><span class="custom-img-field-label">Caste</span><span class="mr-2">:</span><span data-field="caste" class="custom-img-field-value">—</span></div>
+                                                    
+                                                    <div class="section-horoscope">
+                                                        <div class="grid grid-cols-1 gap-2 mt-2">
+                                                            <div><span class="custom-img-field-label">Zodiac Sign</span><span class="mr-2">:</span><span data-field="rashi" class="custom-img-field-value">—</span></div>
+                                                            <div><span class="custom-img-field-label">Nakshatra</span><span class="mr-2">:</span><span data-field="nakshatra" class="custom-img-field-value">—</span></div>
+                                                            <div><span class="custom-img-field-label">Gotra</span><span class="mr-2">:</span><span data-field="gothra" class="custom-img-field-value">—</span></div>
+                                                            <div><span class="custom-img-field-label">Gan</span><span class="mr-2">:</span><span data-field="gan" class="custom-img-field-value">—</span></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mt-2 grid grid-cols-1 gap-2">
+                                                        <div><span class="custom-img-field-label">Higher Education</span><span class="mr-2">:</span><span data-field="edu" class="custom-img-field-value">—</span></div>
+                                                        <div><span class="custom-img-field-label">Occupation</span><span class="mr-2">:</span><span data-field="job" class="custom-img-field-value">—</span></div>
+                                                        <div><span class="custom-img-field-label">Annual Income</span><span class="mr-2">:</span><span data-field="salary" class="custom-img-field-value">—</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="section-family mt-5">
+                                                <div class="custom-img-section-title">Family Details</div>
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div><span class="custom-img-field-label">Father's Name</span><span class="mr-2">:</span><span data-field="father" class="custom-img-field-value">—</span></div>
+                                                    <div><span class="custom-img-field-label">Mother's Name</span><span class="mr-2">:</span><span data-field="mother" class="custom-img-field-value">—</span></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="section-contact mt-5">
+                                                <div class="custom-img-section-title">Contact Details</div>
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div><span class="custom-img-field-label">Mobile Number</span><span class="mr-2">:</span><span data-field="mobile" class="custom-img-field-value">—</span></div>
+                                                    <div><span class="custom-img-field-label">Address</span><span class="mr-2">:</span><span data-field="address" class="custom-img-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="custom-output-section mt-5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- TEMPLATE 1 -->
+                            <div id="template-template1" class="template-container template-active template1-bg p-0">
+                                <div class="watermark" style="z-index: 20;">PREVIEW</div>
+                                
+                                <div class="template1-content z-10">
+                                    <div class="relative">
+                                        <!-- Photo absolute on top right inside the padded area -->
+                                        <div class="t1-photo-container border-[6px] border-white shadow-md">
+                                            <img data-field="photo" class="hidden w-full h-full object-cover">
+                                            <div class="photo-placeholder w-full h-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">📷 photo</div>
+                                        </div>
+
+                                        <div class="w-[65%]">
+                                            <div class="section-personal">
+                                                <div class="t1-section-title" style="margin-top: 0;">Personal Details</div>
+                                                <div class="grid grid-cols-1 gap-3.5">
+                                                    <div><span class="t1-field-label">Name</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="name" class="t1-field-value">—</span></div>
+                                                    <div><span class="t1-field-label">Date of Birth</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="dob" class="t1-field-value">—</span></div>
+                                                    <div><span class="t1-field-label">Religion</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="religion" class="t1-field-value">—</span></div>
+                                                    <div><span class="t1-field-label">Caste</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="caste" class="t1-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="section-horoscope mt-3.5">
+                                                <div class="grid grid-cols-1 gap-3.5">
+                                                    <div><span class="t1-field-label">Gotra</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="gothra" class="t1-field-value">—</span></div>
+                                                    <div><span class="t1-field-label">Zodiac Sign</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="rashi" class="t1-field-value">—</span></div>
+                                                    <div><span class="t1-field-label">Nakshatra</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="nakshatra" class="t1-field-value">—</span></div>
+                                                    <div><span class="t1-field-label">Gan</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="gan" class="t1-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="section-personal mt-3.5">
+                                            <div class="grid grid-cols-1 gap-3.5">
+                                                <div><span class="t1-field-label">Higher Education</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="edu" class="t1-field-value">—</span></div>
+                                                <div><span class="t1-field-label">Occupation</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="job" class="t1-field-value">—</span></div>
+                                                <div><span class="t1-field-label">Income</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="salary" class="t1-field-value">—</span></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="section-family mt-6">
+                                            <div class="t1-section-title">Family Details</div>
+                                            <div class="grid grid-cols-1 gap-3.5">
+                                                <div><span class="t1-field-label">Father's Name</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="father" class="t1-field-value">—</span></div>
+                                                <div><span class="t1-field-label">Mother's Name</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="mother" class="t1-field-value">—</span></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="section-contact mt-6">
+                                            <div class="t1-section-title">Contact Details</div>
+                                            <div class="grid grid-cols-1 gap-3.5">
+                                                <div><span class="t1-field-label">Mobile Number</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="mobile" class="t1-field-value">—</span></div>
+                                                <div><span class="t1-field-label">Address</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span data-field="address" class="t1-field-value">—</span></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="custom-output-section mt-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TEMPLATE 2 -->
+                            <div id="template-template2" class="template-container template2-bg p-0">
+                                <div class="watermark" style="z-index: 20;">PREVIEW</div>
+                                
+                                <div class="template2-content z-10">
+                                    <div class="relative">
+                                        <!-- Photo absolute on top right inside the padded area -->
+                                        <div class="t2-photo-container shadow-sm">
+                                            <img data-field="photo" class="hidden w-full h-full object-cover">
+                                            <div class="photo-placeholder w-full h-full bg-orange-50 flex items-center justify-center text-orange-400 text-sm">📷 photo</div>
+                                        </div>
+
+                                        <div class="w-[68%]">
+                                            <div class="section-personal">
+                                                <div class="grid grid-cols-1 gap-2.5">
+                                                    <div><span class="t2-field-label">Name</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="name" class="t2-field-value">—</span></div>
+                                                    <div><span class="t2-field-label">Date of Birth</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="dob" class="t2-field-value">—</span></div>
+                                                    <div><span class="t2-field-label">Religion</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="religion" class="t2-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="w-[68%] mt-2.5">
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div><span class="t2-field-label">Zodiac Sign</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="rashi" class="t2-field-value">—</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <div class="t2-section-title">Others Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div class="section-personal">
+                                                <div class="grid grid-cols-1 gap-2.5">
+                                                    <div><span class="t2-field-label">Caste</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="caste" class="t2-field-value">—</span></div>
+                                                    <div><span class="t2-field-label">Education</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="edu" class="t2-field-value">—</span></div>
+                                                    <div><span class="t2-field-label">Occupation</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="job" class="t2-field-value">—</span></div>
+                                                    <div><span class="t2-field-label">Income</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="salary" class="t2-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="section-horoscope">
+                                                <div class="grid grid-cols-1 gap-2.5 mt-2.5">
+                                                    <div><span class="t2-field-label">Gotra</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="gothra" class="t2-field-value">—</span></div>
+                                                    <div><span class="t2-field-label">Nakshatra</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="nakshatra" class="t2-field-value">—</span></div>
+                                                    <div><span class="t2-field-label">Gan</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="gan" class="t2-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-family mt-4">
+                                        <div class="t2-section-title">Family Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div><span class="t2-field-label">Father's Name</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="father" class="t2-field-value">—</span></div>
+                                            <div><span class="t2-field-label">Mother's Name</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="mother" class="t2-field-value">—</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-contact mt-4">
+                                        <div class="t2-section-title">Contact Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div><span class="t2-field-label">Mobile Number</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="mobile" class="t2-field-value">—</span></div>
+                                            <div><span class="t2-field-label">Address</span> <span class="mx-2 text-[#d19f3b]">:</span> <span data-field="address" class="t2-field-value">—</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="custom-output-section mt-4"></div>
+                                </div>
+                            </div>
+
+                            <!-- TEMPLATE 3 -->
+                            <div id="template-template3" class="template-container template3-bg p-0">
+                                <div class="watermark" style="z-index: 20;">PREVIEW</div>
+                                
+                                <div class="template3-content z-10">
+                                    <div class="flex gap-6 items-start">
+                                        <div class="flex-1">
+                                            <div class="section-personal">
+                                                <div class="grid grid-cols-1 gap-2.5">
+                                                    <div><span class="t3-field-label">Name</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="name" class="t3-field-value">—</span></div>
+                                                    <div><span class="t3-field-label">Date of Birth</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="dob" class="t3-field-value">—</span></div>
+                                                    <div><span class="t3-field-label">Religion</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="religion" class="t3-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="t3-photo-container shadow-sm section-photo shrink-0">
+                                            <img data-field="photo" class="hidden w-full h-full object-cover">
+                                            <div class="photo-placeholder w-full h-full bg-orange-50 flex items-center justify-center text-orange-500 text-sm">📷 photo</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-2.5">
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div><span class="t3-field-label">Zodiac Sign</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="rashi" class="t3-field-value">—</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <div class="t3-section-title">Others Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div class="section-personal">
+                                                <div class="grid grid-cols-1 gap-2.5">
+                                                    <div><span class="t3-field-label">Caste</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="caste" class="t3-field-value">—</span></div>
+                                                    <div><span class="t3-field-label">Education</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="edu" class="t3-field-value">—</span></div>
+                                                    <div><span class="t3-field-label">Occupation</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="job" class="t3-field-value">—</span></div>
+                                                    <div><span class="t3-field-label">Income</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="salary" class="t3-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="section-horoscope">
+                                                <div class="grid grid-cols-1 gap-2.5 mt-2.5">
+                                                    <div><span class="t3-field-label">Gotra</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="gothra" class="t3-field-value">—</span></div>
+                                                    <div><span class="t3-field-label">Nakshatra</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="nakshatra" class="t3-field-value">—</span></div>
+                                                    <div><span class="t3-field-label">Gan</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="gan" class="t3-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-family mt-4">
+                                        <div class="t3-section-title">Family Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div><span class="t3-field-label">Father's Name</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="father" class="t3-field-value">—</span></div>
+                                            <div><span class="t3-field-label">Mother's Name</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="mother" class="t3-field-value">—</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-contact mt-4">
+                                        <div class="t3-section-title">Contact Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5">
+                                            <div><span class="t3-field-label">Mobile Number</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="mobile" class="t3-field-value">—</span></div>
+                                            <div><span class="t3-field-label">Address</span> <span class="mx-2 text-[#b07e2a]">:</span> <span data-field="address" class="t3-field-value">—</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="custom-output-section mt-4"></div>
+                                </div>
+                            </div>
+
+                            <!-- MUSLIM BIODATA TEMPLATE -->
+                            <div id="template-muslim" class="template-container muslim-bg p-0">
+                                <div class="watermark" style="z-index: 20;">PREVIEW</div>
+                                
+                                <div class="muslim-content z-10">
+                                    <div class="relative">
+                                        <!-- Photo positioned top-right -->
+                                        <div class="muslim-photo-container">
+                                            <img data-field="photo" class="hidden w-full h-full object-cover">
+                                            <div class="photo-placeholder w-full h-full bg-green-50 flex items-center justify-center text-green-400 text-sm">📷 photo</div>
+                                        </div>
+
+                                        <div class="w-[60%]">
+                                            <div class="section-personal">
+                                                <div class="muslim-section-title" style="margin-top: 0;">Personal Details</div>
+                                                <div class="grid grid-cols-1 gap-2.5 mt-2">
+                                                    <div><span class="muslim-field-label">Name</span><span class="muslim-colon">:</span><span data-field="name" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Date of Birth</span><span class="muslim-colon">:</span><span data-field="dob" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Religion</span><span class="muslim-colon">:</span><span data-field="religion" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Caste/Sect</span><span class="muslim-colon">:</span><span data-field="caste" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Education</span><span class="muslim-colon">:</span><span data-field="edu" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Occupation</span><span class="muslim-colon">:</span><span data-field="job" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Annual Income</span><span class="muslim-colon">:</span><span data-field="salary" class="muslim-field-value">—</span></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="section-horoscope mt-2">
+                                                <div class="grid grid-cols-1 gap-2.5">
+                                                    <div><span class="muslim-field-label">Gotra</span><span class="muslim-colon">:</span><span data-field="gothra" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Zodiac Sign</span><span class="muslim-colon">:</span><span data-field="rashi" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Nakshatra</span><span class="muslim-colon">:</span><span data-field="nakshatra" class="muslim-field-value">—</span></div>
+                                                    <div><span class="muslim-field-label">Gan</span><span class="muslim-colon">:</span><span data-field="gan" class="muslim-field-value">—</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-family mt-5">
+                                        <div class="muslim-section-title">Family Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5 mt-2">
+                                            <div><span class="muslim-field-label">Father's Name</span><span class="muslim-colon">:</span><span data-field="father" class="muslim-field-value">—</span></div>
+                                            <div><span class="muslim-field-label">Mother's Name</span><span class="muslim-colon">:</span><span data-field="mother" class="muslim-field-value">—</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-contact mt-5">
+                                        <div class="muslim-section-title">Contact Details</div>
+                                        <div class="grid grid-cols-1 gap-2.5 mt-2">
+                                            <div><span class="muslim-field-label">Contact Number</span><span class="muslim-colon">:</span><span data-field="mobile" class="muslim-field-value">—</span></div>
+                                            <div><span class="muslim-field-label">Address</span><span class="muslim-colon">:</span><span data-field="address" class="muslim-field-value">—</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="custom-output-section mt-5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ------------------------------------------------------------------
+        // GLOBALS
+        let activeTemplate = null;
+        const visibleMap = { personal: true, horoscope: true, family: true, contact: true, photo: true };
+        const pricing = {
+            template1: 0, // 30
+            template2: 0, // 20
+            template3: 0, // 10
+            classic: 0,
+            customimg: 0, // 10
+            muslim: 0    // 10
+        };
+        const hiddenFields = new Set();
+        const customLabels = {};
+
+        // Section toggle (works with classes for preview blocks)
+        function toggleSection(section) {
+            visibleMap[section] = !visibleMap[section];
+            // form visibility
+            const formDiv = document.getElementById(`form-${section}`);
+            if(formDiv) formDiv.style.display = visibleMap[section] ? (section==='personal'?'grid':'block') : 'none';
+            if(section === 'photo' && formDiv) formDiv.style.display = visibleMap[section] ? 'block' : 'none';
+            // preview section visibility (all templates)
+            const sectionClass = `section-${section}`;
+            document.querySelectorAll(`.${sectionClass}`).forEach(el => {
+                el.style.display = visibleMap[section] ? 'block' : 'none';
+            });
+            // toggle icons/buttons
+            const iconSpan = document.getElementById(`toggle-icon-${section}`);
+            if(iconSpan) iconSpan.innerText = visibleMap[section] ? '−' : '+';
+            const btn = document.querySelector(`[data-section="${section}"] .toggle-btn`);
+            if(btn) btn.innerHTML = visibleMap[section] ? '<span>−</span> Hide' : '<span>+</span> Show';
+            liveUpdate();
+        }
+
+        // Custom fields
+        function addCustomField() {
+            const container = document.getElementById('custom-fields-container');
+            const uid = 'cf_' + Date.now() + Math.random().toString(36).substr(2, 5);
+            const row = document.createElement('div');
+            row.className = 'flex flex-wrap gap-2 items-end bg-white p-2 rounded-xl border';
+            row.setAttribute('data-custom-id', uid);
+            row.innerHTML = `
+                <div class="flex-1 min-w-[120px]"><label class="text-xs text-gray-500">Field name</label><input type="text" placeholder="e.g. Hobbies, Weight" class="custom-name w-full p-2 border rounded-lg text-sm"></div>
+                <div class="flex-1 min-w-[140px]"><label class="text-xs text-gray-500">Value</label><input type="text" placeholder="Details" class="custom-value w-full p-2 border rounded-lg text-sm"></div>
+                <button class="remove-custom bg-rose-100 text-rose-600 px-3 py-2 rounded-lg text-sm font-semibold" onclick="this.closest('[data-custom-id]').remove(); liveUpdate();">✕ Remove</button>
+            `;
+            row.querySelector('.custom-name').addEventListener('input', liveUpdate);
+            row.querySelector('.custom-value').addEventListener('input', liveUpdate);
+            container.appendChild(row);
+            liveUpdate();
+        }
+
+        // Update all templates (data-field approach)
+        function liveUpdate() {
+            const fields = ['name','dob','religion','caste','edu','job','salary','father','mother','gothra','rashi','nakshatra','gan','mobile','address'];
+            fields.forEach(f => {
+                const inp = document.getElementById(`in-${f}`);
+                const value = inp ? (inp.value.trim() || '—') : '—';
+                const isHidden = hiddenFields.has(f);
+                
+                document.querySelectorAll(`[data-field="${f}"]`).forEach(el => {
+                    el.innerText = value;
+                    
+                    // Update label if custom exists
+                    const row = el.closest('div');
+                    if (row && customLabels[f]) {
+                        const labelEl = row.querySelector('[class*="-label"]');
+                        if (labelEl) {
+                            // If template classic, add colon if missing
+                            let labelText = customLabels[f];
+                            if (labelEl.classList.contains('field-label-preview') && !labelText.endsWith(':')) {
+                                labelText += ' :';
+                            }
+                            labelEl.innerText = labelText;
+                        }
+                    }
+
+                    // Hide the parent row div if the field is marked as hidden
+                    if (row) {
+                        row.style.display = isHidden ? 'none' : 'block';
+                    }
+                });
+
+                // Update form label
+                if (customLabels[f]) {
+                    const formLabel = document.querySelector(`[data-label-id="${f}"]`);
+                    if (formLabel) formLabel.innerText = customLabels[f];
+                }
+            });
+            updateCustomPreview();
+            // photo handled separately
+            syncPhotoVisibility();
+            updatePayButton();
+        }
+
+        function toggleField(field) {
+            if (hiddenFields.has(field)) {
+                hiddenFields.delete(field);
+            } else {
+                hiddenFields.add(field);
+            }
+            
+            // Update button icon
+            const btn = document.querySelector(`[data-del-btn="${field}"]`);
+            if (btn) {
+                btn.innerHTML = hiddenFields.has(field) ? '➕' : '✕';
+                btn.classList.toggle('text-red-400', !hiddenFields.has(field));
+                btn.classList.toggle('text-green-500', hiddenFields.has(field));
+                btn.title = hiddenFields.has(field) ? 'Restore field' : 'Hide field';
+            }
+            
+            // Update input container style
+            const inp = document.getElementById(`in-${field}`);
+            if (inp) {
+                inp.closest('.field-container').style.opacity = hiddenFields.has(field) ? '0.4' : '1';
+            }
+            
+            liveUpdate();
+        }
+
+        function editLabel(field) {
+            const labelEl = document.querySelector(`[data-label-id="${field}"]`);
+            if (!labelEl) return;
+            
+            // Make label editable inline
+            labelEl.contentEditable = "true";
+            labelEl.focus();
+            
+            // Select text automatically
+            const range = document.createRange();
+            range.selectNodeContents(labelEl);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            // Save on blur or Enter
+            const saveLabel = () => {
+                labelEl.contentEditable = "false";
+                const newLabel = labelEl.innerText.trim();
+                if (newLabel) {
+                    customLabels[field] = newLabel;
+                    liveUpdate();
+                }
+            };
+
+            labelEl.onblur = saveLabel;
+            labelEl.onkeydown = (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    labelEl.blur();
+                }
+                if (e.key === 'Escape') {
+                    labelEl.innerText = customLabels[field] || labelEl.getAttribute('data-original-label') || labelEl.innerText;
+                    labelEl.contentEditable = "false";
+                    labelEl.blur();
+                }
+            };
+        }
+
+        function updateCustomPreview() {
+            const container = document.getElementById('custom-fields-container');
+            const customRows = container.querySelectorAll('[data-custom-id]');
+            let hasAny = false;
+            
+            // Collect the data from the custom fields
+            const customData = [];
+            customRows.forEach(row => {
+                const nameInput = row.querySelector('.custom-name');
+                const valInput = row.querySelector('.custom-value');
+                const fieldName = nameInput?.value.trim();
+                const fieldVal = valInput?.value.trim();
+                
+                if(fieldName) {
+                    hasAny = true;
+                    customData.push({ label: fieldName, value: fieldVal || '—' });
+                } else if(fieldVal) {
+                    hasAny = true;
+                    customData.push({ label: 'Additional', value: fieldVal });
+                }
+            });
+
+            // Update all custom output sections across templates, matching THEIR specific CSS
+            document.querySelectorAll('.custom-output-section').forEach(section => {
+                if(!hasAny) {
+                    section.innerHTML = '';
+                    return;
+                }
+                
+                const templateId = section.closest('.template-container').id;
+                let html = '';
+                
+                if(templateId === 'template-classic') {
+                    html += `<div class="section-title-biodata mt-4">📌 More Information</div><div class="grid grid-cols-1 gap-1">`;
+                    customData.forEach(item => {
+                        html += `<div><span class="field-label-preview">${escapeHtml(item.label)} :</span> <span class="field-value-preview">${escapeHtml(item.value)}</span></div>`;
+                    });
+                    html += `</div>`;
+                } 
+                else if(templateId === 'template-customimg') {
+                    html += `<div class="custom-img-section-title mt-4">More Information</div><div class="grid grid-cols-1 gap-2">`;
+                    customData.forEach(item => {
+                        html += `<div><span class="custom-img-field-label">${escapeHtml(item.label)}</span><span class="mr-2">:</span><span class="custom-img-field-value">${escapeHtml(item.value)}</span></div>`;
+                    });
+                    html += `</div>`;
+                } 
+
+                else if(templateId === 'template-template1') {
+                    html += `<div class="t1-section-title mt-6">More Information</div><div class="grid grid-cols-1 gap-3.5">`;
+                    customData.forEach(item => {
+                        html += `<div><span class="t1-field-label">${escapeHtml(item.label)}</span> <span class="mx-2 text-[#8c5e2a]">:</span> <span class="t1-field-value">${escapeHtml(item.value)}</span></div>`;
+                    });
+                    html += `</div>`;
+                }
+                else if(templateId === 'template-template2') {
+                    html += `<div class="t2-section-title mt-4">More Information</div><div class="grid grid-cols-1 gap-2.5">`;
+                    customData.forEach(item => {
+                        html += `<div><span class="t2-field-label">${escapeHtml(item.label)}</span> <span class="mx-2 text-[#d19f3b]">:</span> <span class="t2-field-value">${escapeHtml(item.value)}</span></div>`;
+                    });
+                    html += `</div>`;
+                }
+                else if(templateId === 'template-template3') {
+                    html += `<div class="t3-section-title mt-4">More Information</div><div class="grid grid-cols-1 gap-2.5">`;
+                    customData.forEach(item => {
+                        html += `<div><span class="t3-field-label">${escapeHtml(item.label)}</span> <span class="mx-2 text-[#b07e2a]">:</span> <span class="t3-field-value">${escapeHtml(item.value)}</span></div>`;
+                    });
+                    html += `</div>`;
+                }
+                
+                section.innerHTML = html;
+            });
+        }
+
+        function escapeHtml(str) { return (str || '').replace(/[&<>]/g, function(m){if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
+
+        // Photo upload
+        function loadPhoto(event) {
+            const file = event.target.files[0];
+            if(file){
+                const isHeic = file.type === "image/heic" || file.name.toLowerCase().endsWith(".heic");
+                if (isHeic && typeof heic2any !== "undefined") {
+                    document.querySelectorAll('.photo-placeholder').forEach(span => span.textContent = "⌛ converting...");
+                    
+                    heic2any({ blob: file, toType: "image/jpeg", quality: 0.8 })
+                        .then(function (result) {
+                            const resultBlob = Array.isArray(result) ? result[0] : result;
+                            processImageBlob(resultBlob);
+                        })
+                        .catch(function (error) {
+                            console.error("Error converting HEIC:", error);
+                            alert("Could not process HEIC image. Please upload a JPG or PNG.");
+                            document.querySelectorAll('.photo-placeholder').forEach(span => span.textContent = "📷 photo");
+                        });
+                } else {
+                    processImageBlob(file);
+                }
+            }
+        }
+
+        function processImageBlob(blob) {
+            const reader = new FileReader();
+            reader.onload = function(e){
+                document.querySelectorAll('[data-field="photo"]').forEach(img => {
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                });
+                document.querySelectorAll('.photo-placeholder').forEach(span => span.classList.add('hidden'));
+            };
+            reader.readAsDataURL(blob);
+        }
+
+        function syncPhotoVisibility() {
+            // If no photo uploaded, ensure placeholder visible and img hidden
+            const imgs = document.querySelectorAll('[data-field="photo"]');
+            const anyImgHasSrc = Array.from(imgs).some(img => img.hasAttribute('src') && img.getAttribute('src').length > 0 && img.getAttribute('src') !== '#');
+            document.querySelectorAll('[data-field="photo"]').forEach(img => {
+                if(anyImgHasSrc) img.classList.remove('hidden');
+                else img.classList.add('hidden');
+            });
+            document.querySelectorAll('.photo-placeholder').forEach(span => {
+                if(anyImgHasSrc) span.classList.add('hidden');
+                else span.classList.remove('hidden');
+            });
+        }
+
+        // Template switching with smooth transition
+        function switchTemplate(templateName) {
+            if (activeTemplate === templateName) return;
+            // Update active variable
+            activeTemplate = templateName;
+            // Remove active class from all containers, add to selected
+            document.querySelectorAll('.template-container').forEach(container => {
+                container.classList.remove('template-active');
+            });
+            const activeContainer = document.getElementById(`template-${templateName}`);
+            if (activeContainer) activeContainer.classList.add('template-active');
+            // Update selector cards
+            document.querySelectorAll('.template-card').forEach(card => {
+                card.classList.remove('active');
+                if (card.dataset.template === templateName) card.classList.add('active');
+            });
+            // Re-apply visibility of sections
+            applySectionVisibility();
+            updatePayButton();
+        }
+
+        function updatePayButton() {
+            const payBtn = document.getElementById('payBtn');
+            const price = pricing[activeTemplate];
+            if (price === 0) {
+                payBtn.innerHTML = `<span>📥</span> Download Free PDF`;
+            } else {
+                payBtn.innerHTML = `<span>💎</span> Unlock Premium PDF · ₹${price} only`;
+            }
+        }
+
+        function applySectionVisibility() {
+            Object.keys(visibleMap).forEach(section => {
+                const sectionClass = `section-${section}`;
+                document.querySelectorAll(`.${sectionClass}`).forEach(el => {
+                    el.style.display = visibleMap[section] ? (section==='personal'?'block':'block') : 'none';
+                });
+            });
+            syncPhotoVisibility();
+        }
+
+        // Payment & PDF (now captures only the active template)
+        let downloading = false;
+        function initiatePayment() {
+            if(downloading) { showToast("Please wait, processing...", "info"); return; }
+            
+            // Premium payment commented for now as per request
+            /*
+            const price = pricing[activeTemplate];
+            if (price > 0) {
+                // Razorpay logic...
+            }
+            */
+
+            // Default to free download for now
+            generatePremiumPDF().then(() => {
+                showToast("✅ PDF downloaded successfully!", "success");
+            });
+        }
+
+        async function generatePremiumPDF() {
+            downloading = true;
+            const payBtn = document.getElementById('payBtn');
+            const originalText = payBtn.innerHTML;
+            payBtn.innerHTML = "⏳ Generating PDF...";
+            payBtn.disabled = true;
+
+            // Get active template element
+            const activeEl = document.getElementById(`template-${activeTemplate}`);
+            if (!activeEl) {
+                downloading = false;
+                payBtn.innerHTML = originalText;
+                payBtn.disabled = false;
+                return;
+            }
+
+            // Temporarily hide watermark in active template only
+            const watermark = activeEl.querySelector('.watermark');
+            if (watermark) watermark.style.display = 'none';
+
+            const opt = {
+                margin: 0,
+                filename: `Marriage_Biodata_${document.getElementById('in-name').value.replace(/\s/g,'_') || 'profile'}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 3, letterRendering: true, useCORS: true, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            try {
+                await html2pdf().set(opt).from(activeEl).save();
+            } catch(e) { console.warn(e); }
+            finally {
+                if (watermark) watermark.style.display = '';
+                downloading = false;
+                payBtn.innerHTML = originalText;
+                payBtn.disabled = false;
+            }
+        }
+
+        // Sample data
+        function fillSampleData() {
+            document.getElementById('in-name').value = "Aarav Mehta";
+            document.getElementById('in-dob').value = "12 March 1995";
+            document.getElementById('in-religion').value = "Hindu";
+            document.getElementById('in-caste').value = "Rajput";
+            document.getElementById('in-edu').value = "B.Tech IIT Delhi, MBA";
+            document.getElementById('in-job').value = "Product Manager";
+            document.getElementById('in-salary').value = "₹28 LPA";
+            document.getElementById('in-father').value = "Mr. Sanjay Mehta (Business)";
+            document.getElementById('in-mother').value = "Mrs. Neha Mehta (Homemaker)";
+            document.getElementById('in-gothra').value = "Kashyap";
+            document.getElementById('in-rashi').value = "Simha";
+            document.getElementById('in-nakshatra').value = "Magha";
+            document.getElementById('in-gan').value = "Manushya";
+            document.getElementById('in-mobile').value = "+91 98765 43210";
+            document.getElementById('in-address').value = "42, Heritage Residency, Mumbai";
+            liveUpdate();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            showToast("✨ Sample data loaded — preview updated", "success");
+        }
+
+        function showToast(msg, type){
+            let toast = document.createElement('div');
+            toast.className = `fixed bottom-6 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full text-white font-medium z-50 shadow-2xl transition-all ${type==='success'?'bg-green-600':'bg-amber-700'}`;
+            toast.innerText = msg;
+            document.body.appendChild(toast);
+            setTimeout(()=>toast.remove(), 2800);
+        }
+
+        // Init
+        function initVisibility(){
+            ['personal','horoscope','family','contact','photo'].forEach(sec => {
+                const formDiv = document.getElementById(`form-${sec}`);
+                if(formDiv) formDiv.style.display = (sec==='personal')?'grid':'block';
+                if(sec==='photo') formDiv.style.display = 'block';
+                const iconSpan = document.getElementById(`toggle-icon-${sec}`);
+                if(iconSpan) iconSpan.innerText = '−';
+            });
+            applySectionVisibility();
+            liveUpdate();
+            updatePayButton();
+            // Activate default template
+            const defaultCard = document.querySelector('[data-template="template1"]');
+            if(defaultCard) switchTemplate('template1');
+        }
+        initVisibility();
+
+        // Expose to global
+        window.liveUpdate = liveUpdate;
+        window.addCustomField = addCustomField;
+        window.loadPhoto = loadPhoto;
+        window.toggleSection = toggleSection;
+        window.initiatePayment = initiatePayment;
+        window.fillSampleData = fillSampleData;
+        window.switchTemplate = switchTemplate;
+        window.toggleField = toggleField;
+        window.editLabel = editLabel;
+    </script>
+</body>
+</html>

@@ -20,7 +20,6 @@ const CustomImgTemplate = () => {
       <div className="watermark">PREVIEW</div>
       
       <div className="custom-img-content flex-1 flex flex-col">
-        {/* Header section inspired by Template 4 */}
         <div className="text-center mb-10 border-b border-[#ad3333]/20 pb-6">
           <p className="text-[#ad3333] text-sm font-serif italic mb-2 tracking-widest">॥ श्री गणेशाय नमः ॥</p>
           <h1 className="text-5xl font-bold tracking-[0.25em] text-[#ad3333] uppercase" style={{ fontFamily: "'Cormorant Garamond', serif" }}>BIODATA</h1>

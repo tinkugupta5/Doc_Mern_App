@@ -7,6 +7,7 @@ const MuslimTemplate = () => {
     activeTemplate, customFields, visibleSections, photo,
     sectionLabels, shouldShowSection
   } = useBiodataContext();
+  // test
   
   if (activeTemplate !== 'muslim') return null;
 
